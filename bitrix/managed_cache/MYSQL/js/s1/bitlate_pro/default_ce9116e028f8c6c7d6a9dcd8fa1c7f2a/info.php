@@ -1,0 +1,1 @@
+<? $arFilesInfo = array( 'FILES' => array("/local/templates/bitlate_pro/components/bitrix/catalog.section/favorites/script.js" => "150885328711491",), 'CUR_SEL_CNT' => '0', 'CUR_IE_CNT' => '0'); ?>

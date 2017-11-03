@@ -1,0 +1,1 @@
+<?require($_SERVER["DOCUMENT_ROOT"] . SITE_TEMPLATE_PATH . "/include/" . SITE_ID ."/search_title.php");?>

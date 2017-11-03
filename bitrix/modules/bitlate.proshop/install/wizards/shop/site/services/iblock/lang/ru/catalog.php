@@ -1,0 +1,30 @@
+<?
+$MESS["STORE_NAME_1"] = "Магазин Pro Bitlate";
+$MESS["STORE_DESCR_1"] = " 200 метров от станции метро \"Комсомольская\"";
+$MESS["STORE_ADR_1"] = "ул. Каланчевская д.1";
+$MESS["STORE_EMAIL_1"] = "sale@bitlate.ru";
+$MESS["STORE_GPS_N_1"] = "55.771318";
+$MESS["STORE_GPS_S_1"] = "37.652949";
+$MESS["STORE_PHONE_1"] = "8 800 775 2108";
+$MESS["STORE_PHONE_SCHEDULE_1"] = "с 9-00 до 22-00";
+$MESS["STORE_METRO_1"] = "Комсомольская";
+$MESS["STORE_IMAGE_1"] = "/site/services/iblock/references_files/iblock/243/2434a8cb156231a9fbd6e0b08d8ba147.jpg";
+$MESS["STORE_PHOTO_1"] = "/site/services/iblock/references_files/iblock/2be/2bee8398375237549a3b8a43aeb76d9a.jpg";
+$MESS["STORE_PHOTO_1_2"] = "/site/services/iblock/references_files/iblock/4bc/4bcfdfcd0d940af8f33bc076acc71cff.jpg";
+$MESS["STORE_NAME_2"] = "Мегамаркет Bitlate";
+$MESS["STORE_DESCR_2"] = "100 метров от станции \"Парк Победы\"";
+$MESS["STORE_ADR_2"] = "ул. Генерала Ермолаева д.4";
+$MESS["STORE_EMAIL_2"] = "shop@bitlate.ru";
+$MESS["STORE_GPS_N_2"] = "55.735312";
+$MESS["STORE_GPS_S_2"] = "37.517680";
+$MESS["STORE_PHONE_2"] = "8 800 775 2108";
+$MESS["STORE_PHONE_SCHEDULE_2"] = "с 9 до 22";
+$MESS["STORE_METRO_2"] = "Парк Победы";
+$MESS["STORE_IMAGE_2"] = "/site/services/iblock/references_files/iblock/ffc/ffc2df49ad6d13697f0ac6f2a063b2b7.jpg";
+$MESS["STORE_PHOTO_2"] = "/site/services/iblock/references_files/iblock/8ac/8ace236d944d545a80cd979498574ae1.jpg";
+$MESS["STORE_PHOTO_2_2"] = "/site/services/iblock/references_files/iblock/f40/f40a17412e1aa89655c126ffcb199654.jpg";
+$MESS["CAT_STORE_NAME"] = "Склад";
+$MESS["UF_NL_SHOP_MAIN"] = "Главный склад";
+$MESS["UF_NL_SHOP_METRO"] = "Станция метро";
+$MESS["UF_NL_SHOP_PHOTOS"] = "Фотографии магазина";
+?>
