@@ -1,3 +1,11 @@
+PATH
+  remote: ../spree-extensions/spree_multi_vendor
+  specs:
+    spree_multi_vendor (0.0.1.alpha)
+      spree_backend (>= 3.1.0, < 4.0)
+      spree_core (>= 3.1.0, < 4.0)
+      spree_extension
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -393,6 +401,7 @@ DEPENDENCIES
   spree (~> 3.6.3)
   spree_auth_devise (~> 3.3)
   spree_gateway (~> 3.3)
+  spree_multi_vendor!
   spring
   spring-watcher-listen (~> 2.0.0)
   sqlite3
