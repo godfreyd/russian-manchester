@@ -2,14 +2,7 @@
 
 Online marketplace step by step.
 
-1. [Подготовка рабочей среды](#Подготовка-рабочей-среды)
-	* [Установка Ruby Version Manager](#Установка-ruby-version-manager)
-	* [Установка rbenv](#Установка-rbenv)
-	* [Установка Ruby](#Установка-ruby)
-	* [Установка Rails](#Установка-rails)
-	* [Установка Bundler](#Установка-bundler)
-	* [Установка Image Magick](#Установка-image-magick)
-	* [Установка Postgres](#Установка-postgres)
+1. [Подготовка рабочей среды](docs/work-environment/README.md)
 2. [Выбор версии Rails](#Выбор-версии-rails)
 3. [Использование rbenv](#Использование-rbenv)
 4. [Создание Rails-приложения](#Создание-rails-приложения)
@@ -36,154 +29,6 @@ Online marketplace step by step.
 * [`docs/react`](docs/react/README.md) — руководство по переходу и работе с React.js.
 * [`docs/problems`](docs/problems/README.md) — проблемы и решения.
 
-## Подготовка рабочей среды
-
-###  Установка Ruby Version Manager
-
-[RVM](https://rvm.io) — менеджер пакетов Ruby.
-
-```bash
-$ \curl -sSL https://get.rvm.io | bash -s stable
-```
-
-**Проверка**
-
-Чтобы RVM работал корректно, он должен быть функцией. Чтобы проверить, что RVM является функцией, выполните команду:
-
-```bash
-$ type rvm | head -n 1
-```
-
-Чтобы проверить все доступные версии Ruby в RVM, выполните команду:
-
-```bash
-$ rvm list known
-```
-
-### Установка rbenv
-
-[rbenv](https://github.com/rbenv/rbenv) — утилита для установки и переключения пакетов Ruby. Используется совместно с [ruby-build](https://github.com/rbenv/ruby-build)
-
-```bash
-$ brew install rbenv ruby-build
-```
-
-**Проверка**
-
-Чтобы проверить какая версия `rbenv` установлена, выполните команду:
-
-```bash
-$ rbenv -v
-```
-
-**Обновление**
-
-```bash
-$ brew upgrade rbenv ruby-build
-```
-
-**Настройка**
-
-1. Выполните команду:
-
-	```bash
-	$ rbenv init
-	```
-
-2. Добавьте следующий код в файл `~/.bash_profile`:
-
-	```text
-	eval "$(rbenv init -)"
-	```
-
-3. Убедитесь, что rbenv правильно настроен:
-
-	```bash
-	$ curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor | bash
-	```
-
-	Ответ
-
-	![rbenv settings](docs/static/images/rbenv-doctor.png)
-
-### Установка Ruby
-
-С помощью [Homebrew](https://brew.sh/index_ru.html):
-
-```bash
-$ brew install ruby
-```
-
-С помощью [RVM](https://rvm.io):
-
-```bash
-$ rvm install ruby 2.5.0
-```
-
-С помощью [rbenv](https://github.com/rbenv/rbenv):
-
-```bash
-$ rbenv install 2.5.0
-```
-
-**Проверка**
-
-Чтобы проверить какая версия Ruby установлена, выполните команду:
-
-```bash
-$ ruby -v
-```
-
-или (если установлен менеджер пакетов [RVM](#ruby-version-manager))
-
-```bash
-$ rvm list
-```
-
-### Установка Rails
-
-Rails — это фреймворк для разработки приложений, написанный на языке Ruby.
-
-С помощью RubyGems:
-
-```bash
-# Install the last version Rails
-$ gem install rails
-# Install Rails 5.2.0
-$ gem install rails -v 5.2.0
-```
-
-**Проверка**
-
-Чтобы проверить какая версия используется, выполните команду:
-
-```bash
-$ rails -v
-```
-
-### Установка Bundler
-
-[Bundler](http://bundler.io) — менеджер установки gem'ов нужных версий, которые будут корректно работать друг с другом.
-
-```bash
-$ gem install bundler
-```
-
-### Установка ImageMagick
-
- Spree использует библиотеку [ImageMagick](http://www.imagemagick.org) для управления изображениями. Позволяет автоматически изменять размер, сжимать и изменять изображения.
-
-```bash
-$ brew install imagemagick
-```
-
-### Установка Postgres
-
-Чтобы установить Postgres на компьютер, выполните команду:
-
-```bash
-$ brew install postgresql
-```
 
 ## Выбор версии Rails
 
@@ -257,7 +102,7 @@ $ rails server -p 9000
 app/					# Модели, представления, контроллеры и статика
 	assets/				# Картинки, JS- и CSS-файлы приложения
 		config/
-			manifest.js		
+			manifest.js
 		images/			# Изображения
 		javascript/		# JS-файлы, по умолчанию `coffee`
 		stylesheets/	# Стили, по умолчанию `scss`
@@ -329,7 +174,7 @@ README.md       		# Описание
 
 * Rails предполагает, что класс называется `StoreController` и находится в файле `store_controller.rb` каталога `app/controllers`.
 * Rails также ищет вспомогательный модуль по имени `StoreHelper`, который находится в файле `store_helper.rb` каталога `app/helpers`.
-* Rails станет искать шаблоны представлений для этого контроллера в каталоге `app/views/store`. 
+* Rails станет искать шаблоны представлений для этого контроллера в каталоге `app/views/store`.
 * Rails будет по умолчанию брать код вывода на экран для этих представлений и рассматривать его как макеты шаблонов, находящихся в файле `store.html.erb` или `store.xml.erb` в каталоге `app/views/layouts`.
 
 Все эти соглашения показаны в следующей таблице:
@@ -337,7 +182,7 @@ README.md       		# Описание
 ![Rails Naming Convention](docs/static/images/naming-convention.png)
 
 
-## Диагностическая информация 
+## Диагностическая информация
 
 Чтобы увидеть на экране диагностическую информацию о приложении, запустите сервер и перейдите по ссылке [http://localhost:3000/rails/info/properties](http://localhost:3000/rails/info/properties).
 
@@ -444,7 +289,7 @@ $ gem install pg -v 0.18.4
 Создадим следующие базы данных:
 
 * `spreemarketplacedev` — для разработки;
-* `spreemarketplacetest` — для тестирования; 
+* `spreemarketplacetest` — для тестирования;
 * `spreemarketplaceprod` — для продакшн.
 
 Чтобы создать базы данных:
@@ -539,7 +384,7 @@ $ rake spree_auth:admin:create
 
 * [GitHub](https://github.com/spree-contrib/spree_i18n)
 * [Документация](https://guides.spreecommerce.org/developer/i18n.html)
- 
+
 Чтобы установить SpreeI18n:
 
 1. Добавьте gem в Gemfile.
@@ -630,7 +475,7 @@ $ mkdir spree-extensions
     	create    db/migrate/20180612131103_add_sale_price_to_spree_variants.rb
 	```
 
-3. Отредактируйте файл `db/migrate/XXXXXXXXXXX_add_sale_price_to_spree_variants.rb`, чтобы обеспечить точность и масштаб: 
+3. Отредактируйте файл `db/migrate/XXXXXXXXXXX_add_sale_price_to_spree_variants.rb`, чтобы обеспечить точность и масштаб:
 
 	```rb
 	class AddSalePriceToSpreeVariants < SpreeExtension::Migration[5.2]
@@ -654,7 +499,7 @@ $ mkdir spree-extensions
 	$ cd spree-marketplace
 	```
 
-2. Добавьте gem расширения `spree_simple_sales` в Gemfile приложения. 
+2. Добавьте gem расширения `spree_simple_sales` в Gemfile приложения.
 
 	```text
 	gem 'spree_simple_sales', path: '../spree-extensions/spree_simple_sales'
@@ -708,7 +553,7 @@ $ mkdir spree-extensions
 
   > **Примечание.** Это позволит выбрать только те продукты, которые имеют вариант с набором `sale_price`.
 
-4. Добавьте маршрут к этому действию в файл `config/routes.rb`. 
+4. Добавьте маршрут к этому действию в файл `config/routes.rb`.
 
 	```rb
 	Spree::Core::Engine.routes.draw do
@@ -888,11 +733,11 @@ $ mkdir spree-extensions
 
 ## Работа с Deface
 
-[Deface](https://github.co	m/spree/deface) — это библиотека Rails, позволяющая переопределять Erb-шаблоны без их непосредственного редактирования. Таким образом, мы получим возможность обновлять Spree, не теряя наши изменения. 
+[Deface](https://github.co	m/spree/deface) — это библиотека Rails, позволяющая переопределять Erb-шаблоны без их непосредственного редактирования. Таким образом, мы получим возможность обновлять Spree, не теряя наши изменения.
 
 Цель:
 
-Переопределить шаблон [spree/admin/products/_form.html.erb](https://github.com/spree/spree/blob/master/backend/app/views/spree/admin/products/_form.html.erb), точнее [следующую часть](https://github.com/spree/spree/blob/master/backend/app/views/spree/admin/products/_form.html.erb#L32-L39). 
+Переопределить шаблон [spree/admin/products/_form.html.erb](https://github.com/spree/spree/blob/master/backend/app/views/spree/admin/products/_form.html.erb), точнее [следующую часть](https://github.com/spree/spree/blob/master/backend/app/views/spree/admin/products/_form.html.erb#L32-L39).
 
 Чтобы переопределить нативный шаблон Spree:
 
@@ -941,9 +786,9 @@ $ mkdir spree-extensions
 
 Чтобы повысить производительность приложения:
 
-1. Выключите режим поддержки активных соединений (нужен только в продакшн). 
+1. Выключите режим поддержки активных соединений (нужен только в продакшн).
 
-    > **Примечание.** Rails 3.1 представила концепцию поддержки активных соединений `assets:pipeline`. При разработке данную возможность можно отключить, чтобы повысить производительность приложения. 
+    > **Примечание.** Rails 3.1 представила концепцию поддержки активных соединений `assets:pipeline`. При разработке данную возможность можно отключить, чтобы повысить производительность приложения.
 
     ```bash
     $ bundle exec rake assets:precompile
