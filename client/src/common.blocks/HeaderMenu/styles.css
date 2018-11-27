@@ -1,0 +1,21 @@
+
+.Header .ant-menu-horizontal,
+.Header .ant-menu-horizontal .ant-menu-item,
+.Header .ant-menu-horizontal .ant-menu-item:hover,
+.Header .ant-menu-horizontal .ant-menu-submenu {
+    border-bottom: none;
+}
+
+.ant-row-flex {
+    min-height: 100px;
+}
+
+.ant-menu-submenu-popup {
+    background-color: #fff;
+}
+
+.ant-badge {
+    position: absolute;
+    left: 30px;
+    top: 5px
+}
