@@ -1,0 +1,146 @@
+openapi: 3.0.0
+servers:
+  - url: 'http://localhost:3001/v1/'
+info:
+  title: Бекенд проекта "Гипермаркет"
+  description: |
+    Бекенд проекта "Гипермаркет" на NodeJS.
+
+    С бекендом взаимодействует фронтенд проекта.
+
+    Обращается к базе данных в PGAAS
+  version: '1.0'
+paths:
+  /textile:
+    post:
+      summary: Сохранение текстильного изделия
+      description: |
+        Добавляет новое изделие в базу данных, или обновляет
+        изделие, если в базе уже есть запись с таким
+        идентификатором. `id` передаётся в теле запроса и является
+        единственным обязательным полем.
+
+        Если в запросе перечислить не все поля изделия, то
+        при создании выставляется значение по умолчанию `NULL`.
+        При обновлении устройства сохраняются старые значения полей.
+
+        ## Доступ
+        Добавлять новые изделия и изменять информацию о существующих могут только администраторы сервиса.
+        Если у пользователя нет доступа на редактирование,
+        вернется ошибка 403.
+      tags:
+        - textile
+      responses:
+        '200':
+          description: Сохранённое изделие
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/textile'
+        '400':
+          description: Invalid arguments
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+              examples:
+                400_CSF:
+                  value:
+                    message: Textile good is invalid
+                    internalCode: 400_CSF
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+              examples:
+                401_MSC:
+                  value:
+                    message: Missing session cookie
+                    internalCode: 401_MSC
+                401_IUD:
+                  value:
+                    message: Invalid user data
+                    internalCode: 401_IUD
+                    body:
+                      status:
+                        id: 1
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+              examples:
+                403_CNE:
+                  value:
+                    message: User has no edit access to device
+                    internalCode: 403_NEA
+                    login: r2d2
+                    deviceId: 1111
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/textile'
+        description: Текстильное изделие
+        required: true
+components:
+  schemas:
+    error:
+      type: object
+      properties:
+        message:
+          type: string
+          description: Error message
+        internalCode:
+          type: string
+          description: Internal error code
+      required:
+        - message
+        - internalCode
+    textile:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Уникальный идентификатор изделия
+        goodId:
+          type: string
+          description: Идентификатор текстильного изделия
+        categoryId:
+          type: string
+          description: Идентификатор категории
+        inventory:
+          type: string
+          description: Внутренний инвентарный номер
+        material:
+          type: string
+          description: Материал
+        brand:
+          type: string
+          description: Бренд
+        note:
+          type: string
+          description: Заметки
+        cityOfShipment:
+          type: string
+          description: Город отгрузки
+        regionOfShipment:
+          type: string
+          description: Регион отгрузки
+        latOfShipment:
+          type: string
+          description: Долгота точки отгрузки
+        lonOfShipment:
+          type: string
+          description: Широта точки отгрузки
+        discount:
+          type: string
+          description: Скидка
+        status:
+          type: string
+          description: Статус
+      required:
+        - id

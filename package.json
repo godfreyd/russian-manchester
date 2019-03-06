@@ -1,0 +1,36 @@
+{
+  "name": "test-app-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "db:sync": "NODE_PATH=. node tests/db/sync.js",
+    "db:clean": "NODE_PATH=. node tests/db/clean.js",
+    "start": "NODE_PATH=. node -r dotenv/config index.js",
+    "test": "npm-run-all db:sync test:run",
+    "test:run": "NODE_PATH=. mocha --require clarify 'tests/**/*.js'",
+    "test:local": "NODE_ENV=local npm test"
+  },
+  "author": "Sergey Bocharov",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "chalk": "^2.4.2",
+    "clarify": "^2.1.0",
+    "configs-overload": "^0.2.0",
+    "cors": "^2.8.5",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "http-assert-value": "^2.1.0",
+    "lodash": "^4.17.11",
+    "mocha": "^5.2.0",
+    "pg": "^7.8.1",
+    "sequelize": "^4.42.0",
+    "shortid": "^2.2.14",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "eslint": "^5.14.0",
+    "npm-run-all": "^4.1.5"
+  }
+}
