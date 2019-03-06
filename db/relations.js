@@ -8,5 +8,4 @@ module.exports = tables => {
 
     tables.textileGood.hasMany(tables.textile, { as: 'textiles', foreignKey: 'goodId' });
 
-
 };

@@ -7,10 +7,10 @@ module.exports = (sequelize, DataTypes) => {
                 allowNull: false,
                 primaryKey: true
             },
-            goodId: {
+            textileGoodId: {
                 type: DataTypes.STRING(250),
-                field: 'good_id',
-                defaultValue: 'default-good'
+                field: 'textile_good_id',
+                defaultValue: 'default-textile-good'
             },
             category: DataTypes.STRING(250),
             inventory: DataTypes.STRING(250),
