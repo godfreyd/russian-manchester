@@ -1,0 +1,83 @@
+.dialog-modal
+{
+    display: grid;
+    grid-template-columns: 70px 1fr;
+
+    width: 380px;
+    min-height: 200px;
+
+    border-radius: 6px;
+
+    &-border
+    {
+        border-radius: 6px 0 0 6px;
+
+        &_level
+        {
+            &_warn
+            {
+                background-color: #f2cece;
+            }
+
+            &_success
+            {
+                background-color: #98ce60;
+            }
+        }
+    }
+
+    & .icon
+    {
+        margin-top: 20px;
+        margin-left: 15px;
+    }
+
+    &-body
+    {
+        display: flex;
+        flex-direction: column;
+
+        margin: 25px;
+    }
+
+    &-title
+    {
+        letter-spacing: .21px;
+
+        font-size: 21px;
+        font-weight: 600;
+        line-height: 26px;
+    }
+
+    &-content
+    {
+        flex: 1 0 auto;
+
+        margin: 9px 0;
+
+        font-size: 14px;
+        line-height: 20px;
+
+        color: #999;
+    }
+
+    &-controls
+    {
+        display: flex;
+
+        margin: 30px 0 0;
+
+        & .button2 + .button2
+        {
+            margin: 0 0 0 20px;
+        }
+    }
+}
+
+.modal_type_dialog-modal .modal__content
+{
+    overflow: hidden;
+
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+}

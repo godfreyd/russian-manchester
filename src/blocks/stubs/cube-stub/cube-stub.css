@@ -1,0 +1,9 @@
+.cube-stub
+{
+    margin: 0 20px 20px;
+
+    &-title
+    {
+        margin: 10px 0 36px 20px;
+    }
+}

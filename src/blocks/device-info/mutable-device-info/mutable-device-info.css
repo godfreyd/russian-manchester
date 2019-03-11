@@ -1,0 +1,22 @@
+.mutable-device-info
+{
+    &-startrek-icon
+    {
+        width: 11px;
+        height: 11px;
+
+        margin-right: 3px;
+    }
+
+    &-ticket
+    {
+        text-decoration: none;
+
+        color: #2f99e5;
+
+        &:hover
+        {
+            color: #73c5ff;
+        }
+    }
+}

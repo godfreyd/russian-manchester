@@ -1,0 +1,23 @@
+.devices
+{
+    position: relative;
+
+    margin-left: 20px;
+
+    text-align: left;
+
+    grid-area: devices;
+
+    &-wrap
+    {
+        margin: 20px;
+    }
+
+    &-container.darkening
+    {
+
+        opacity: .5;
+
+        transition: opacity .2s ease-in-out;
+    }
+}

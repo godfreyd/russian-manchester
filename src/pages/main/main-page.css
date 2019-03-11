@@ -1,0 +1,36 @@
+.main-page
+{
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+
+    &-content
+    {
+        display: grid;
+
+        /* 3 девайса */
+        grid-template-columns: 250px 730px 280px;
+        grid-template-areas: 'filter devices user-devices';
+
+        margin: 35px 0;
+    }
+
+    /* 4 девайса */
+    @media (min-width: 1500px) and (max-width: 1749px)
+    {
+        &-content
+        {
+            grid-template-columns: 250px 970px 280px;
+        }
+    }
+
+    /* 5 девайсов */
+    @media (min-width: 1750px)
+    {
+        &-content
+        {
+            grid-template-columns: 250px 1200px 280px;
+        }
+    }
+}

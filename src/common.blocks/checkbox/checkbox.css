@@ -1,0 +1,4 @@
+.checkbox_view_default.checkbox_theme_normal.checkbox_checked_yes.checkbox_tone_green .checkbox__box::before
+{
+    background-color: #46be4b;
+}

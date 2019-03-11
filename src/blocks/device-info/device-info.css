@@ -1,0 +1,58 @@
+.device-info
+{
+    &-group
+    {
+        margin-bottom: 38px;
+
+        &:last-child
+        {
+            margin-bottom: 0;
+        }
+
+        &_type_buttons
+        {
+            display: flex;
+
+            padding-left: 110px;
+
+            & .device-button
+            {
+                flex-grow: 1;
+
+                margin-right: 16px;
+
+                &:last-child
+                {
+                    margin-right: 0;
+                }
+            }
+        }
+
+        &_type_note .device-info-row__value
+        {
+            white-space: normal;
+        }
+    }
+
+    &-note
+    {
+        height: 104px;
+
+        &-text
+        {
+            word-wrap: break-word;
+
+            line-height: 26px;
+        }
+    }
+
+    & .device-info-row
+    {
+        margin-bottom: 4px;
+
+        &:last-child
+        {
+            margin-bottom: 0;
+        }
+    }
+}

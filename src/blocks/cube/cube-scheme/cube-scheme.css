@@ -1,0 +1,72 @@
+.cube-scheme
+{
+    overflow: auto;
+
+    width: 100%;
+
+    &-content
+    {
+        display: table;
+
+        width: 100%;
+    }
+
+    &-row
+    {
+        display: table-row;
+    }
+
+    &-row-header
+    {
+        display: table-cell;
+
+        padding: 0 20px 0 0;
+
+        text-align: center;
+        vertical-align: bottom;
+    }
+
+    &-row-name
+    {
+        font-size: 36px;
+        font-weight: 600;
+        line-height: 32px;
+    }
+
+    &-row-slots-number
+    {
+        margin: 5px 0 0;
+
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    &-row-occupied-number
+    {
+        padding: 0 3px 0 0;
+
+        font-weight: 600;
+    }
+
+    &-row-total-number
+    {
+        padding: 0 0 0 3px;
+    }
+
+    &-row-slots
+    {
+        display: table-cell;
+
+        width: 100%;
+
+        padding: 60px 0 0;
+
+        vertical-align: bottom;
+    }
+
+    &-row-slots-content
+    {
+        display: flex;
+        justify-content: space-between;
+    }
+}

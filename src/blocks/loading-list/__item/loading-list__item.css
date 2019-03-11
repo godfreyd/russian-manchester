@@ -1,0 +1,36 @@
+.loading-list
+{
+    &-item
+    {
+        display: grid;
+        grid-template-columns: 38px auto;
+        grid-column-gap: 10px;
+
+        margin: 0 0 14px;
+
+        line-height: 18px;
+    }
+
+    &-item-info
+    {
+        font-size: 12px;
+
+        color: #999;
+    }
+
+    &-item-login
+    {
+        margin-bottom: 1px;
+
+        font-size: 14px;
+
+        color: #000;
+
+        & a
+        {
+            overflow-wrap: break-word;
+
+            width: 100%;
+        }
+    }
+}

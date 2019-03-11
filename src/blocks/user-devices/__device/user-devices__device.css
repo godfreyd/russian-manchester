@@ -1,0 +1,56 @@
+.user-devices
+{
+    &-device
+    {
+        width: 220px;
+        margin-bottom: 25px;
+
+        & .link
+        {
+
+            margin-left: 10px;
+
+            font-size: 14px;
+        }
+    }
+
+    &-device-status
+    {
+        display: flex;
+        align-items: flex-start;
+    }
+
+    &-device-title
+    {
+
+        overflow: hidden;
+
+        max-width: 216px;
+        margin: 5px 0 2px;
+
+        white-space: nowrap;
+        text-overflow: ellipsis;
+
+        font-size: 18px;
+        line-height: 24px;
+    }
+
+    &-device-description
+    {
+        cursor: pointer;
+
+        transition: opacity .15s ease-in-out;
+
+        &:hover
+        {
+            opacity: .6;
+        }
+    }
+
+    &-device-info
+    {
+        font-size: 14px;
+
+        color: #808080
+    }
+}

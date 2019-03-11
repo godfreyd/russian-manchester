@@ -1,0 +1,30 @@
+.user-page
+{
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+
+    &-content
+    {
+        display: grid;
+
+        grid-template-columns: 620px 260px 280px;
+        grid-template-areas: 'user user-history user-devices';
+        grid-column-gap: 50px;
+
+        margin: 45px 0;
+    }
+
+    &-center
+    {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    & .my-devices__title
+    {
+        line-height: 30px;
+    }
+}

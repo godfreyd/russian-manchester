@@ -1,0 +1,34 @@
+.old-checkbox
+{
+    display: inline-block;
+
+    & .y-checkbox
+    {
+        display: block;
+    }
+
+    & .y-checkbox__text
+    {
+
+        text-align: right;
+
+        font-weight: normal;
+
+        opacity: .5;
+    }
+
+    & .y-checkbox_theme_normal .y-checkbox__view
+    {
+        border-width: 2px;
+    }
+
+    & .y-checkbox_theme_normal.y-checkbox_checked .y-checkbox__view
+    {
+        border-width: 1px
+    }
+
+    & .y-checkbox_size_m
+    {
+        line-height: inherit;
+    }
+}

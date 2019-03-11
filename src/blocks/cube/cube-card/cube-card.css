@@ -1,0 +1,207 @@
+.cube-card
+{
+    display: grid;
+    grid-template-columns: 290px 670px 290px;
+
+    &-close
+    {
+        position: absolute;
+        z-index: 1;
+        top: 16px;
+        right: 16px;
+    }
+
+    &-left
+    {
+        display: flex;
+        flex-direction: column;
+
+        padding: 32px 32px 48px;
+
+        & .cube-status
+        {
+            margin: 5px 0 0;
+        }
+
+        & .icon
+        {
+            margin: 20px 0 0;
+            align-self: center;
+        }
+    }
+
+    &-name
+    {
+        letter-spacing: .27px;
+
+        font: 27px 'Yandex Sans Text Web', sans-serif;
+        font-weight: 600;
+        line-height: 30px;
+    }
+
+    &-controls
+    {
+        &_type_primary
+        {
+            margin: 43px 0 0;
+        }
+
+        &_type_secondary
+        {
+            display: flex;
+            flex-direction: column;
+
+            margin: 85px 0 0;
+            flex-grow: 1;
+            justify-content: flex-end;
+        }
+
+        &_type_form
+        {
+            height: 36px;
+            margin: 28px 0 0 220px;
+        }
+
+        &_type_slots-scheme
+        {
+            height: 36px;
+            margin: 0 0 30px;
+
+            text-align: right;
+        }
+
+        &_type_primary .button2,
+        &_type_secondary .button2
+        {
+            display: block;
+
+            width: 100%;
+        }
+
+        &_type_slots-scheme .button2
+        {
+            width: 240px;
+        }
+
+        &_type_form .button2
+        {
+            width: calc((100% - 16px) / 2);
+        }
+
+        &_type_primary .button2 + .button2,
+        &_type_secondary .button2 + .button2
+        {
+            margin: 13px 0 0;
+        }
+
+        &_type_form .button2 + .button2
+        {
+            margin: 0 0 0 16px;
+        }
+    }
+
+    &-center
+    {
+        padding: 4px 25px 48px;
+
+        border-right: 2px solid #ebeff1;
+        border-left: 2px solid #ebeff1;
+    }
+
+    & .cube-scheme
+    {
+        margin: 0 0 30px;
+    }
+
+    &-field-row
+    {
+
+        display: grid;
+        grid-template-columns: 185px auto;
+        grid-column-gap: 35px;
+
+        font-size: 14px;
+        line-height: 32px;
+    }
+
+    &-field-row + &-field-row
+    {
+        margin: 4px 0 0;
+    }
+
+    &-field-label
+    {
+        color: #808080;
+    }
+
+    &_view_default &-field-value
+    {
+        overflow: hidden;
+
+        margin: 0 0 0 10px;
+    }
+
+    &_view_form &-field-value
+    {
+        & .textinput__control
+        {
+            font: 14px 'Yandex Sans Text Web', sans-serif;
+        }
+    }
+
+    &-right
+    {
+        padding: 37px 28px 0;
+
+        background: #f6f7f9;
+    }
+
+    &-history-wrapper
+    {
+        position: relative;
+
+        height: 100%;
+
+        & .loading-list
+        {
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+
+            height: 100%;
+        }
+    }
+
+    &-modal-title
+    {
+        margin: 0;
+
+        letter-spacing: .21px;
+
+        font: 21px 'Yandex Sans Text Web', sans-serif;
+        font-weight: 600;
+        line-height: 26px;
+    }
+
+    &-modal-message
+    {
+        margin: 9px 0;
+
+        font-size: 14px;
+        line-height: 20px;
+
+        color: #999;
+    }
+}
+
+.modal_type_cube-card
+{
+    & .modal__content
+    {
+        overflow: hidden;
+
+        border-radius: 6px;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, .05);
+    }
+}

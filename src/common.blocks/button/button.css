@@ -1,0 +1,52 @@
+.button2
+{
+    &_theme_normal&_size_n
+    {
+        font-family: 'Yandex Sans Text Web', sans-serif;
+        font-size: 14px;
+    }
+
+    &_theme_normal&_size_n &-text
+    {
+        margin: 0 15px;
+    }
+
+    &_theme_normal&_view_default&_tone_default::before,
+    &_theme_normal&_view_default&_tone_default&_disabled_yes::before
+    {
+        border: 2px solid #ebeff1;
+        background-color: #fff;
+    }
+
+    &_theme_normal&_view_default&_tone_default&_hovered_yes::before
+    {
+        background-color: #ebeff1;
+    }
+
+    &_theme_normal&_view_default&_tone_default&_action_yes::before,
+    &_theme_normal&_view_default&_tone_default&_action_yes&_disabled_yes::before
+    {
+        border: none;
+        background-color: #ebeff1;
+    }
+
+    &_theme_normal&_view_default&_tone_default&_action_yes&_hovered_yes::before
+    {
+        background-color: #dbdfe4;
+    }
+
+    &&_theme_normal&_view_default&_tone_default
+    {
+        color: #333;
+    }
+
+    &&_theme_normal&_view_default&_tone_default&_disabled_yes &-text
+    {
+        opacity: .3;
+    }
+}
+
+.utilityfocus .button2_theme_normal.button2_view_default.button2_tone_default.button2_focused_yes::before
+{
+    border: 2px solid #b3b3b3;
+}

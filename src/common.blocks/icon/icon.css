@@ -1,0 +1,244 @@
+.icon
+{
+    display: inline-block;
+
+    background-repeat: no-repeat;
+    background-position: 50%;
+
+    transition: opacity .15s ease-in-out;
+
+    &_type
+    {
+        &_android
+        {
+            background-image: url('images/android.svg');
+        }
+
+        &_iphone
+        {
+            background-image: url('images/iphone.svg');
+        }
+
+        &_iphone,
+        &_android
+        {
+            width: 190px;
+            height: 190px;
+        }
+
+        &_arrow-thin-right,
+        &_arrow-thin-left
+        {
+            width: 20px;
+            height: 18px;
+
+            background-image: url('images/arrow-thin.svg');
+        }
+
+        &_arrow-thin-left
+        {
+            transform: rotate(180deg);
+        }
+
+        &_hypercube-history
+        {
+            width: 36px;
+            height: 36px;
+
+            background-image: url('images/hypercube-history.svg');
+        }
+
+        &_warning
+        {
+            width: 40px;
+            height: 40px;
+
+            background-image: url('images/warning.svg');
+        }
+
+        &_lock
+        {
+            width: 40px;
+            height: 40px;
+
+            background-image: url('images/lock.svg');
+        }
+
+        &_devices-empty
+        {
+            width: 60px;
+            height: 60px;
+
+            background-image: url('images/devices-empty.svg');
+        }
+
+        &_question-blue
+        {
+            width: 18px;
+            height: 33px;
+
+            background-image: url('images/question-blue.svg');
+        }
+
+        &_yandex-logo
+        {
+            width: 75px;
+            height: 38px;
+
+            background-image: url('images/yandex-logo.svg');
+        }
+
+        &_hypercube-logo
+        {
+            width: 90px;
+            height: 38px;
+
+            background-image: url('images/hypercube-logo.svg');
+        }
+
+        &_empty-android
+        {
+            width: 150px;
+            height: 285px;
+
+            background-image: url('images/android.svg');
+        }
+
+        &_history-android
+        {
+            width: 50px;
+            height: 50px;
+
+            background-image: url('images/android.svg');
+        }
+
+        &_doorClose
+        {
+            width: 50px;
+            height: 50px;
+
+            background-image: url('images/hypercube-door-close.svg');
+        }
+
+        &_doorOpen
+        {
+            width: 50px;
+            height: 50px;
+
+            background-image: url('images/hypercube-door-open.svg');
+        }
+
+        &_cube-tooltip
+        {
+            width: 16px;
+            height: 16px;
+
+            cursor: pointer;
+
+            background-image: url('images/cube-tooltip.svg');
+
+            &:hover
+            {
+                opacity: .6;
+            }
+        }
+
+        &_device-android
+        {
+            width: 130px;
+            height: 130px;
+
+            background-image: url('images/android.svg');
+        }
+
+        &_question
+        {
+            width: 16px;
+            height: 16px;
+
+            cursor: pointer;
+
+            background-image: url('images/question.svg');
+
+            &:hover
+            {
+                opacity: .6;
+            }
+        }
+
+        &_error-404
+        {
+            width: 417px;
+            height: 302px;
+
+            background-image: url('images/error.png');
+            background-size: 417px;
+        }
+
+        &_cube
+        {
+            width: 160px;
+            height: 258px;
+
+            background-image: url('images/cube.svg');
+        }
+
+        &_close
+        {
+            width: 20px;
+            height: 20px;
+
+            cursor: pointer;
+
+            opacity: .3;
+
+            background-image: url('images/close.svg');
+
+            &:hover
+            {
+                opacity: .6;
+            }
+        }
+
+        &_check
+        {
+            width: 40px;
+            height: 40px;
+
+            background-image: url('images/check.svg');
+        }
+
+        &_cancel
+        {
+            background-image: url('images/cancel.svg');
+        }
+
+        &_pencil
+        {
+            background-image: url('images/pencil.svg');
+        }
+
+        &_tick
+        {
+            background-image: url('images/tick.svg');
+        }
+
+        &_cancel,
+        &_pencil,
+        &_tick
+        {
+            width: 16px;
+            height: 16px;
+
+            cursor: pointer;
+
+            background-size: contain;
+
+            &:hover
+            {
+                opacity: .6;
+            }
+        }
+    }
+}
+

@@ -1,0 +1,33 @@
+.devices-empty
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    height: 65vh;
+
+    text-align: center;
+
+    &-icon
+    {
+        margin: 20px;
+    }
+
+    &-title
+    {
+        letter-spacing: .21px;
+
+        font: 21px 'Yandex Sans Text Web', sans-serif;
+        font-weight: 600;
+        line-height: 25px;
+    }
+
+    &-tip
+    {
+        font-size: 14px;
+        line-height: 20px;
+
+        color: #ccc;
+    }
+}

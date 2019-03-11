@@ -1,0 +1,95 @@
+.slot-type-select
+{
+    padding: 40px;
+
+    font-size: 14px;
+
+    &-close
+    {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+
+    &-slot-types
+    {
+        display: flex;
+
+        margin: 15px 0 0;
+        padding: 15px 20px;
+
+        border-radius: 6px;
+        background: #ebf0f2;
+    }
+
+    &-slot-type
+    {
+        width: 90px;
+        padding: 10px;
+
+        user-select: none;
+        text-align: center;
+
+        border-radius: 6px;
+        background: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+
+        transition: box-shadow .15s linear;
+
+        &_selected
+        {
+            opacity: .2;
+        }
+
+        & + &
+        {
+            margin: 0 0 0 20px;
+        }
+
+        &:not(&_selected)
+        {
+            cursor: pointer;
+        }
+
+        &:not(&_selected):hover
+        {
+            box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+        }
+    }
+
+    &-wire-part
+    {
+        stroke: #889499;
+    }
+
+    &-slot-type_type_lightning &-wire-part
+    {
+        stroke: var(--color-slot-type-lightning);
+    }
+
+    &-slot-type_type_type-c &-wire-part
+    {
+        stroke: var(--color-slot-type-type-c);
+    }
+
+    &-slot-type_type_micro-usb &-wire-part
+    {
+        stroke: var(--color-slot-type-micro-usb);
+    }
+
+    &-slot-type-name
+    {
+        margin: 6px 0 0;
+    }
+}
+
+.modal_type_slot-type-select
+{
+    & .modal__content
+    {
+        overflow: hidden;
+
+        border-radius: 6px;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, .05);
+    }
+}

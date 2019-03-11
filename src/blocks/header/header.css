@@ -1,0 +1,73 @@
+.header
+{
+    display: grid;
+    grid-template-columns: 200px 1fr 275px 250px 60px;
+
+    height: 60px;
+
+    border-bottom: 1px solid #e1e6e8;
+
+    &-help-links
+    {
+        display: flex;
+        justify-content: flex-end;
+
+        font-size: 14px;
+        line-height: 22px;
+
+        & .link
+        {
+            margin-right: 30px;
+        }
+
+        & a
+        {
+            display: flex;
+            align-items: center;
+        }
+
+        & .icon
+        {
+            margin: 0 8px;
+        }
+    }
+
+    &-nav-menu
+    {
+        display: flex;
+        justify-content: center;
+
+        font-size: 14px;
+
+        & .link
+        {
+
+            margin-right: 30px;
+
+            line-height: 60px;
+        }
+    }
+
+    &-search
+    {
+        display: flex;
+        align-items: center;
+
+        margin-right: 35px;
+    }
+
+    &-user
+    {
+        display: flex;
+        align-items: center;
+
+        padding: 0 25px 0 0;
+
+        text-align: right;
+
+        & .user-icon
+        {
+            display: block;
+        }
+    }
+}

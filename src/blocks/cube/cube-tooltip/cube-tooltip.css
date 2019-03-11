@@ -1,0 +1,103 @@
+.cube-tooltip
+{
+
+    width: 300px;
+    padding: 25px;
+
+    font-size: 14px;
+
+    &-title
+    {
+
+        margin-bottom: 8px;
+
+        line-height: 15px;
+
+        color: #999;
+    }
+
+    &-description
+    {
+        line-height: 20px;
+    }
+
+    &-fqdn
+    {
+        line-height: 25px;
+
+        color: #2f99e5;
+    }
+
+    &-copy-link
+    {
+
+        display: none;
+
+        cursor: pointer;
+
+        line-height: 25px;
+    }
+
+    &-fqdn-block
+    {
+        margin-top: 19px;
+
+        &:hover
+        {
+            & .cube-tooltip__fqdn
+            {
+                display: none;
+            }
+
+            & .cube-tooltip__copy-link
+            {
+                display: block;
+            }
+        }
+    }
+
+    &-status-block
+    {
+        margin-top: 16px;
+    }
+
+    &-status-dot
+    {
+        display: inline-block;
+
+        width: 9px;
+        height: 9px;
+
+        border-radius: 50%;
+
+        &_status
+        {
+            &_online
+            {
+                background-color: #98ce60;
+            }
+
+            &_offline
+            {
+                background-color: #f00;
+            }
+        }
+    }
+
+    &-status
+    {
+        margin-left: 6px;
+
+        line-height: 25px;
+    }
+
+    &-controls
+    {
+        margin-top: 18px;
+
+        & .button2
+        {
+            width: 100%;
+        }
+    }
+}

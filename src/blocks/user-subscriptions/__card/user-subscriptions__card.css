@@ -1,0 +1,38 @@
+.user-subscriptions
+{
+    &-card
+    {
+        width: 220px;
+        margin-bottom: 25px;
+
+        cursor: pointer;
+
+        &:hover .user-subscriptions__device
+        {
+            opacity: .6;
+
+            transition: opacity .15s ease-in-out;
+        }
+    }
+
+    &-device-title
+    {
+        overflow: hidden;
+
+        max-width: 216px;
+        margin: 5px 0 2px;
+
+        white-space: nowrap;
+        text-overflow: ellipsis;
+
+        font-size: 18px;
+        line-height: 24px;
+    }
+
+    &-device-info
+    {
+        font-size: 14px;
+
+        color: #808080;
+    }
+}

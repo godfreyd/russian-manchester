@@ -1,0 +1,16 @@
+.textarea_theme_normal .textarea__box
+{
+    border: 2px solid #ebeff1;
+    border-radius: 4px;
+}
+
+.textarea_theme_normal.textarea_hovered_yes .textarea__box
+{
+    border-color: #cecece;
+}
+
+.textarea_theme_normal.textarea_focused_yes .textarea__box,
+.textarea_theme_normal.textarea_focused_yes.textarea_hovered_yes .textarea__box
+{
+    border-color: #b3b3b3;
+}

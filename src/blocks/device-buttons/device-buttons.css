@@ -1,0 +1,16 @@
+.device-buttons
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &-item
+    {
+        margin-bottom: 12px;
+
+        &:last-child
+        {
+            margin-bottom: 0;
+        }
+    }
+}
