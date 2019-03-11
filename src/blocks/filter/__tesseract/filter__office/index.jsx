@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import find from 'lodash/find';
 
 import CheckboxWithTooltip from '../../../../common.blocks/checkbox-with-tooltip';
-import Checkbox from '@material-ui/core/Checkbox';
+import LegoCheckbox from 'lego-on-react/src/components/checkbox/checkbox.react';
 
 const classNames = cn('filter');
 
@@ -81,13 +81,13 @@ export default class OfficeFilter extends React.Component {
 
                 <div className={classNames('title')}>{officeName}</div>
                 {cubes.length > 1 &&
-                    <Checkbox
+                    <LegoCheckbox
                         name="all"
                         checked={all}
                         onChange={this._handleAllCubesChange}
                     >
                         Все кубы
-                    </Checkbox>
+                    </LegoCheckbox>
                 }
                 {cubes.map(cube => (
                     <CheckboxWithTooltip

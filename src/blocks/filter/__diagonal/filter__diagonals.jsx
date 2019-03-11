@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { cn } from '@bem-react/classname';
 import get from 'lodash/get';
 
-import InputAdornment from '@material-ui/core/InputAdornment';
+import LegoInput from 'lego-on-react/src/components/textinput/textinput.react';
 
 import './filter__diagonal.css';
 
@@ -66,23 +66,23 @@ export default class FilterDiagonal extends React.Component {
 
                 <div className={classNames('area', { type: 'diagonal' })}>
                     <div className={classNames('input')} data-mark='от'>
-                        <InputAdornment
+                        <LegoInput
                             name="diagonal-min"
                             pin="round-round"
                             placeholder={this._placeholder.min}
                             maxLength="4"
                             onChange={this._handleChange.bind(this, 'min')}
-                            value={this.state.min}
+                            text={this.state.min}
                         />
                     </div>
                     <div className={classNames('input')} data-mark='до'>
-                        <InputAdornment
+                        <LegoInput
                             name="diagonal-max"
                             pin="round-round"
                             placeholder={this._placeholder.max}
                             maxLength="4"
                             onChange={this._handleChange.bind(this, 'max')}
-                            value={this.state.max}
+                            text={this.state.max}
                         />
                     </div>
                 </div>

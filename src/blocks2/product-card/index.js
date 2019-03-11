@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import {
     saveProduct,
-} from '../../redux/actions2/product';
+} from '../../redux/actions/product';
 
 import ProductCard from './product-card';
 

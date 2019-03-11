@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { cn } from '@bem-react/classname';
 import find from 'lodash/find';
 
-import Checkbox from '@material-ui/core/Checkbox';
+import LegoCheckbox from 'lego-on-react/src/components/checkbox/checkbox.react';
 
 import './filter__location.css';
 
@@ -27,13 +27,13 @@ const LocationFilter = ({ locationsValue, filterChange }) => {
         <div className={classNames('location')}>
 
             <div className={classNames('area')}>
-                <Checkbox
+                <LegoCheckbox
                     name="available"
                     checked={isChecked}
                     onChange={handleCheckboxChange}
                 >
                 Свободные
-                </Checkbox>
+                </LegoCheckbox>
             </div>
 
         </div>

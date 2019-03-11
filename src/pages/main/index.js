@@ -12,8 +12,7 @@ function mapStateToProps(state) {
     return {
         filters: state.filters.filters,
         myDevices: state.mydevices.mydevices,
-        filtersValue: state.filters.filtersValue,
-        tesseractInprogress: state.tesseract.inprogress
+        filtersValue: state.filters.filtersValue
     };
 }
 

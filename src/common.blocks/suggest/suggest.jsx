@@ -90,6 +90,7 @@ export default class Suggest extends React.Component {
      * @private
      */
     _handleKeyDown = event => {
+        // eslint-disable-next-line
         switch (event.key) {
             case 'Enter': {
                 event.preventDefault();

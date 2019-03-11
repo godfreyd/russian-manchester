@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { cn } from '@bem-react/classname';
 import get from 'lodash/get';
 
-import Checkbox from '@material-ui/core/Checkbox';
+import LegoCheckbox from 'lego-on-react/src/components/checkbox/checkbox.react';
 
 const classNames = cn('filter');
 
@@ -22,14 +22,14 @@ const PlatformFiltersGroup = ({ platformName, platformVersions, platformState, o
 
         return (
             <div key={name} className={className}>
-                <Checkbox
+                <LegoCheckbox
                     name={name}
                     checked={checked}
                     onChange={onChange}
                 >
                     {platformName || 'Неизвестно'}
                     {version !== 'all' && version && ` ${version}`}
-                </Checkbox>
+                </LegoCheckbox>
             </div>
         );
     });

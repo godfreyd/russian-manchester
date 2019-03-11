@@ -44,7 +44,7 @@ function initFiltersValue() {
 
     const storageValue = ls.get('filter');
     const storageFiltersValue = initFilter(storageValue, defaultStorageFilters);
-
+    //eslint-disable-next-line
     const queries = typeof location === 'undefined' ? {} : getQueries(location);
     const queriesValue = Object.keys(queries).reduce((result, key) => {
         result[key] = { [key]: queries[key] };

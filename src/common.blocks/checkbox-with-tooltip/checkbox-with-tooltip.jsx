@@ -3,7 +3,7 @@ import { cn } from '@bem-react/classname';
 import PropTypes from 'prop-types';
 import ReactHoverObserver from 'react-hover-observer';
 
-import Checkbox from '@material-ui/core/Checkbox';
+import LegoCheckbox from 'lego-on-react/src/components/checkbox/checkbox.react';
 import Popup from '../popup';
 
 import './checkbox-with-tooltip.css';
@@ -57,13 +57,13 @@ export default class CheckboxWithTooltip extends React.Component {
                     onMouseLeave={() => this._togglePopup(false)}
                 >
                     <div ref={this._refWrapperCallback}>
-                        <Checkbox
+                        <LegoCheckbox
                             name={name}
                             checked={checked}
                             onChange={onChange}
                         >
                             {text}
-                        </Checkbox>
+                        </LegoCheckbox>
                     </div>
                 </ReactHoverObserver>
                 <Popup
