@@ -3,7 +3,6 @@ import ls from 'local-storage';
 import { handleActions } from 'redux-actions';
 
 import { getQueries } from '../../lib/helpers';
-
 import {
     EVENT_FETCH_FILTERS,
     EVENT_FETCH_FILTERS_SUCCESS,
@@ -46,7 +45,7 @@ function initFiltersValue() {
     const storageValue = ls.get('filter');
     const storageFiltersValue = initFilter(storageValue, defaultStorageFilters);
 
-    const queries = typeof window.location === 'undefined' ? {} : getQueries(window.location);
+    const queries = typeof location === 'undefined' ? {} : getQueries(location);
     const queriesValue = Object.keys(queries).reduce((result, key) => {
         result[key] = { [key]: queries[key] };
 

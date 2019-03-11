@@ -1,17 +1,7 @@
-import watchDevicesAsync from './devices';
-import watchDeviceAsync from './device';
-import watchFiltersAsync from './filters';
-import watchMyDevicesAsync from './mydevices';
-import watchUserAsync from './user';
-import watchTesseractAsync from './tesseract';
+import watchProductAsync from './product';
 
 export default function *rootSaga() {
     yield [
-        watchDevicesAsync(),
-        watchDeviceAsync(),
-        watchFiltersAsync(),
-        watchMyDevicesAsync(),
-        watchUserAsync(),
-        watchTesseractAsync()
+        watchProductAsync()
     ];
 }

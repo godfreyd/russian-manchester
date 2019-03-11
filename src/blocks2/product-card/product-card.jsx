@@ -72,14 +72,14 @@ class NewProduct extends React.Component {
                     autocomplete={false}
                     size="m"
                     hasClear
-                    placeholder='ID'
+                    placeholder='Бренд'
                     pin="round-round"
                     onChange={value => this._handleInputChange('brand', value)}
                 />
                 </label>
 
 
-                    <Button theme="normal"  size="m" action type="submit">
+                    <Button theme="normal" size="m" action type="submit">
                     Сохранить
                     </Button>
                 </form>

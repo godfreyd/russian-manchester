@@ -1,7 +1,7 @@
 // Унести урл до апи в конфиг
 // eslint-disable-next-line no-nested-ternary
-const apiBaseUrl = process.env.NODE_ENV === 'local' ? 'https://dev.hypercube.yandex-team.ru/api/v2/' :
-    process.env.NODE_ENV === 'testing' ? 'https://test.hypercube.yandex-team.ru/api/v2/' : '/api/v2/';
+const apiBaseUrl = process.env.NODE_ENV === 'development' ? 'http://localhost:3001/v1/' :
+    process.env.NODE_ENV === 'testing' ? 'http://localhost:3001/v1/' : '/v1/';
 
 export default function *request(path, options = {}) {
     options = { json: true, ...options };
