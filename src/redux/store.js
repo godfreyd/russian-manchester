@@ -4,7 +4,7 @@ import createSagaMiddleware from 'redux-saga';
 import reducer from './reducers';
 import rootSaga from './saga';
 
-const devCompose = process.env.NODE_ENV === 'local'
+const devCompose = process.env.NODE_ENV === 'development'
     && typeof window === 'object'
     && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__;
 

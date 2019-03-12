@@ -7,14 +7,13 @@ import Button from '../../common.blocks/button';
 
 const classNames = cn('product-card');
 
-class NewProduct extends React.Component {
+class ProductCard extends React.Component {
 
     constructor(props) {
         super(props);
 
         this.state = {
-            id: '',
-            brand: ''
+            productInfo: {}
         };
 
     }
@@ -29,30 +28,58 @@ class NewProduct extends React.Component {
      */
     _handleInputChange = (name, value) => {
         const { onInputChange} = this.props;
+        const { productInfo } = this.state;
 
         if (onInputChange) {
             onInputChange(value.trim());
         }
 
-        this.setState({
-            [name]: value
-        });
+        // this.setState({
+        //     [name]: value
+        // });
+
+        productInfo[name] = value;
+
+        this.setState({ productInfo });
+
+
+        // this.setState({ productInfo: { ...productInfo, [name]: value } });
+    }
+
+    /**
+     * Сохранение информации о продукте
+     *
+     * @returns {void}
+     * @private
+     */
+    _onSubmit = event => {
+        event.preventDefault();
+
+        const { productInfo } = this.state;
+
+        const body = {
+            id: productInfo.id,
+            brand: productInfo.brand,
+        };
+
+        this.props.saveProduct(body);
+
     }
 
     render() {
-        const { id = '', brand = '' } = this.state;
+        const { productInfo } = this.state;
 
         return (
             <div className={classNames()}>
                 <div className={classNames('content')}>
-                <form>
+                <form className={classNames('form')} onSubmit={this._onSubmit}>
                     <label>
                         ID:
 
                         <Input
                         theme="normal"
                         name="id"
-                        text={id}
+                        text={productInfo.id || ''}
                         autocomplete={false}
                         size="m"
                         hasClear
@@ -68,7 +95,7 @@ class NewProduct extends React.Component {
                     <Input
                     theme="normal"
                     name="id"
-                    text={brand}
+                    text={productInfo.brand || ''}
                     autocomplete={false}
                     size="m"
                     hasClear
@@ -79,7 +106,7 @@ class NewProduct extends React.Component {
                 </label>
 
 
-                    <Button theme="normal" size="m" action type="submit">
+                    <Button theme="normal" size="m" action type="submit" >
                     Сохранить
                     </Button>
                 </form>
@@ -95,4 +122,4 @@ class NewProduct extends React.Component {
 
 }
 
-export default NewProduct;
+export default ProductCard;

@@ -1,3 +1,5 @@
+import { connect } from 'react-redux';
+
 import AdminPage from './admin-page';
 
-export default AdminPage;
+export default connect(null, null)(AdminPage);

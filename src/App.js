@@ -3,6 +3,9 @@ import Helmet from 'react-helmet';
 import {  BrowserRouter, Switch, Route } from 'react-router-dom';
 import './App.css';
 
+import { configureStore } from './redux/store';
+import { getInitialState } from './redux/state';
+
 // import UserPage from 'pages/user';
 import AdminPage from 'pages/admin';
 import MainPage from 'pages/main';
@@ -30,5 +33,8 @@ class App extends Component {
     );
   }
 }
+
+App.getInitialState = getInitialState;
+App.configureStore = configureStore;
 
 export default App;

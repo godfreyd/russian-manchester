@@ -1,8 +1,10 @@
 import { connect } from 'react-redux';
+import { debounce } from 'throttle-debounce';
+
 import { fetchDevices } from '../../redux/actions/devices';
 import { fetchFilters } from '../../redux/actions/filters';
 import { fetchMyDevices } from '../../redux/actions/mydevices';
-import { debounce } from 'throttle-debounce';
+
 
 import MainPage from './main-page';
 
