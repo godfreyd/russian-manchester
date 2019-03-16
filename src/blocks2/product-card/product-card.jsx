@@ -2,8 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { cn } from '@bem-react/classname';
 
-import Input from '../../common.blocks/input';
-import Button from '../../common.blocks/button';
+import ProductInfo from '../product-info';
 
 const classNames = cn('product-card');
 
@@ -16,6 +15,27 @@ class ProductCard extends React.Component {
             productInfo: {}
         };
 
+        this._onSaveInfo = this._onSaveInfo.bind(this);
+    }
+
+    componentWillMount() {
+        this._initializeInputs();
+    }
+
+     /**
+     * Помещаем инициализирующее значение в инпут
+     *
+     * @private
+     */
+    _initializeInputs() {
+
+        const productInfo = {
+            id: '',
+            brand: '',
+            note: ''
+        };
+
+        this.setState({ productInfo });
     }
 
     /**
@@ -27,23 +47,17 @@ class ProductCard extends React.Component {
      * @private
      */
     _handleInputChange = (name, value) => {
-        const { onInputChange} = this.props;
+        const { onInputChange } = this.props;
         const { productInfo } = this.state;
 
         if (onInputChange) {
             onInputChange(value.trim());
         }
 
-        // this.setState({
-        //     [name]: value
-        // });
-
         productInfo[name] = value;
 
         this.setState({ productInfo });
 
-
-        // this.setState({ productInfo: { ...productInfo, [name]: value } });
     }
 
     /**
@@ -52,18 +66,18 @@ class ProductCard extends React.Component {
      * @returns {void}
      * @private
      */
-    _onSubmit = event => {
-        event.preventDefault();
-
+    _onSaveInfo = () => {
         const { productInfo } = this.state;
 
         const body = {
             id: productInfo.id,
             brand: productInfo.brand,
+            note: productInfo.note
         };
 
-        this.props.saveProduct(body);
+        console.log(this.props.saveProduct(body));
 
+        this.props.saveProduct(body);
     }
 
     render() {
@@ -72,52 +86,19 @@ class ProductCard extends React.Component {
         return (
             <div className={classNames()}>
                 <div className={classNames('content')}>
-                <form className={classNames('form')} onSubmit={this._onSubmit}>
-                    <label>
-                        ID:
-
-                        <Input
-                        theme="normal"
-                        name="id"
-                        text={productInfo.id || ''}
-                        autocomplete={false}
-                        size="m"
-                        hasClear
-                        placeholder='ID'
-                        pin="round-round"
-                        onChange={value => this._handleInputChange('id', value)}
-                    />
-                    </label>
-
-                    <label>
-                    BRAND:
-
-                    <Input
-                    theme="normal"
-                    name="id"
-                    text={productInfo.brand || ''}
-                    autocomplete={false}
-                    size="m"
-                    hasClear
-                    placeholder='Бренд'
-                    pin="round-round"
-                    onChange={value => this._handleInputChange('brand', value)}
-                />
-                </label>
-
-
-                    <Button theme="normal" size="m" action type="submit" >
-                    Сохранить
-                    </Button>
-                </form>
-
+                    <ProductInfo
+                        productInfo={productInfo}
+                        onInputChange={this._handleInputChange}
+                        onSaveInfo={this._onSaveInfo}
+                     />
                 </div>
             </div>
         );
     }
 
     static propTypes = {
-        onInputChange: PropTypes.func
+        onInputChange: PropTypes.func,
+        onSaveInfo: PropTypes.func
     }
 
 }

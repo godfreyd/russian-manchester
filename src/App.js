@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+// import * as Sentry from '@sentry/browser';
 import Helmet from 'react-helmet';
 import {  BrowserRouter, Switch, Route } from 'react-router-dom';
 import './App.css';
@@ -11,7 +13,15 @@ import AdminPage from 'pages/admin';
 import MainPage from 'pages/main';
 // import ErrorPage from 'pages/error';
 
-class App extends Component {
+
+export default class App extends Component {
+
+  // componentDidMount() {
+  //     const { sentry } = this.props.appData;
+
+  //     Sentry.init({ ...sentry });
+  // }
+
   render() {
     return (
       <div className="App">
@@ -26,7 +36,6 @@ class App extends Component {
             <Route exact path="/" component={MainPage} />
             <Route exact path="/search" component={MainPage} />
             <Route exact path="/admin" component={AdminPage} />
-
           </Switch>
         </BrowserRouter>
       </div>
@@ -34,7 +43,20 @@ class App extends Component {
   }
 }
 
+// App.getInitialState = getInitialState;
+// App.configureStore = configureStore;
+
+// export default App;
+
+
+App.propTypes = {
+  appData: PropTypes.object
+};
+
+App.childContextTypes = {
+  lang: PropTypes.string,
+  i18n: PropTypes.object
+};
+
 App.getInitialState = getInitialState;
 App.configureStore = configureStore;
-
-export default App;

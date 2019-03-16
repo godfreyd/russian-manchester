@@ -11,7 +11,7 @@ function mapStateToProps(state) {
 
     return {
         actionInprogress: state.product.actionInprogress,
-        productInfo: state.product.product,
+        productInfo: state.product.productInfo
     };
 }
 

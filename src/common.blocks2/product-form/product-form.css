@@ -1,0 +1,41 @@
+.product-form
+{
+    &__group
+    {
+        margin-bottom: 38px;
+
+        &:last-child
+        {
+            margin-bottom: 0;
+        }
+
+        &_type_buttons
+        {
+            display: flex;
+
+            padding-left: 110px;
+
+            & .product-button
+            {
+                flex-grow: 1;
+
+                margin-right: 16px;
+
+                &:last-child
+                {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+
+    & .product-info-row
+    {
+        margin-bottom: 4px;
+
+        &:last-child
+        {
+            margin-bottom: 0;
+        }
+    }
+}

@@ -12,7 +12,7 @@ const UserIcon = ({ login, size = 32, type = 'default' }) => {
     // const avatarSrc = `https://center.yandex-team.ru/api/v1/user/${login}/avatar/${size}.jpg`;
     // const url = `/user/${login}`;
 
-    const avatarSrc = `../../static/user/${login}/avatar/${size}.jpg`;
+    const avatarSrc = `/static/user/${login}/avatar/${size}.jpg`;
     const url = `/user/${login}`;
 
     return (

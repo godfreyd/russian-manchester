@@ -1,0 +1,33 @@
+.ellipsis-string
+{
+    color: #000;
+    background: #fff;
+
+    &-short
+    {
+        overflow: hidden;
+
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    &-full
+    {
+        position: absolute;
+        z-index: 20;
+
+        display: none;
+
+        max-width: 50rem;
+        padding: 0 10px 0 0;
+
+        word-wrap: break-word;
+
+        background: inherit;
+    }
+
+    &:hover &-full
+    {
+        display: block;
+    }
+}

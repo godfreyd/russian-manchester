@@ -11,7 +11,8 @@ export default handleActions({
     [EVENT_SAVE_PRODUCT_SUCCESS]: saveProductSuccess,
     [EVENT_SAVE_PRODUCT_FAIL]: saveProductFail
 }, {
-    actionInprogress: false
+    actionInprogress: false,
+    productInfo: {},
 });
 
 function saveProduct(state) {

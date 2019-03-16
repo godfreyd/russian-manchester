@@ -3,6 +3,9 @@ import request from './request';
 export default {
 
     save(body) {
-        return request('textile', { body, method: 'POST' });
+        console.log('fffff')
+        console.log(body)
+
+        return request('textile/save', { body, method: 'POST' });
     }
 };

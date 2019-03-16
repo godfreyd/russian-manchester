@@ -10,7 +10,6 @@ const classNames = cn('admin-page');
 
 class AdminPage extends React.Component {
 
-
     render() {
 
         return (
