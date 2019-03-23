@@ -1,0 +1,7 @@
+{
+    "extends": "stylelint-config-toolbox",
+    "rules": {
+        "max-nesting-depth": 4,
+        "max-line-length": 120
+    }
+}
