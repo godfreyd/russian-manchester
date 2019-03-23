@@ -1,13 +1,21 @@
 module.exports.server = {
-    presets: ['es2015-node6', 'stage-0', 'react'],
-    plugins: [['transform-require-ignore', {extensions: ['.css']}], 'transform-decorators-legacy'],
+    presets: [['@babel/preset-env', {
+        "targets": {
+          "node": "current"
+        }
+      }], '@babel/preset-react'],
+    plugins: [['babel-plugin-transform-require-ignore', {extensions: ['.css']}], '@babel/plugin-proposal-class-properties'],
     babelrc: false,
-    ignore: /node_modules/
+    ignore: [/node_modules/]
 };
 
 module.exports.client = {
-    presets: ['es2015', 'stage-0', 'react'],
-    plugins: ['react-hot-loader/babel', 'transform-decorators-legacy'],
+    presets: [['@babel/preset-env',{
+        "targets": {
+          "node": "current"
+        }
+      }],  '@babel/preset-react'],
+    plugins: ['react-hot-loader/babel', '@babel/plugin-proposal-class-properties'],
     babelrc: false,
-    ignore: /node_modules/
+    ignore: [/node_modules/]
 };

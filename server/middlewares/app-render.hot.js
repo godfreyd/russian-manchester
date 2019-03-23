@@ -1,9 +1,9 @@
-require('babel-register')(require('../../.babelrc').server);
+require('@babel/register')(require('../../.babelrc').server);
 const webpack = require('webpack');
 const hotMiddleware = require('webpack-hot-middleware');
 const devMiddleware = require('webpack-dev-middleware');
 const webpackConfig = require('../../webpack/client.config');
-const ssr = require('../../src/ssr.jsx').default;
+const ssr = require('../../src/ssr').default;
 const compiler = webpack(webpackConfig);
 
 module.exports = [

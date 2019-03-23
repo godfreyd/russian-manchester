@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 const env = process.env.NODE_ENV;
 const IS_PRODUCTION = (env === 'production');
@@ -34,7 +35,7 @@ if (IS_PRODUCTION) {
 }
 
 const vendorLibs = [
-    'babel-polyfill',
+    '@babel/polyfill',
     'react',
     'react-dom',
     'redux',
@@ -44,6 +45,7 @@ const vendorLibs = [
 ];
 
 const config = {
+    mode: IS_PRODUCTION ? 'production' : 'development',
     name: 'client',
     entry: {
         index: IS_PRODUCTION ?
@@ -103,12 +105,20 @@ const config = {
             }
         ]
     },
+    optimization: {
+        splitChunks: {
+            chunks: 'all',
+            name: 'vendor',
+            cacheGroups: {
+                vendors: {
+                    filename: 'vendor.js'
+                }
+            }
+        },
+        minimizer: []
+    },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
-        new webpack.optimize.CommonsChunkPlugin({
-            name: 'vendor',
-            filename: 'vendor.js'
-        }),
         new ExtractTextPlugin('[name].build.css'),
         new webpack.NoEmitOnErrorsPlugin(),
         new webpack.DefinePlugin({
@@ -123,11 +133,14 @@ if (IS_PRODUCTION) {
     config.plugins.push(new webpack.LoaderOptionsPlugin({
         minimize: true
     }));
-    config.plugins.push(new webpack.optimize.UglifyJsPlugin({
-        compress: { warnings: false }
+    config.optimization.minimizer.push(new UglifyJsPlugin({
+        uglifyOptions: {
+            compress: { warnings: false }
+        },
     }));
 } else {
     config.output.publicPath = '/static/build/';
 }
+
 
 module.exports = config;

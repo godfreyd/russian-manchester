@@ -2,12 +2,12 @@ const _ = require('lodash');
 const env = process.env.NODE_ENV || 'development';
 const config = require('configs-overload')('./configs', { env: env });
 
-function prepareData(req) {
+function prepareData(res) {
     return {
         bundle: 'index',
-        env: process.env.NODE_ENV,
+        env: env,
         lang: 'ru',
-        nonce: req.nonce,
+        nonce: res.locals.nonce,
         staticHost: config.statics.host,
         links: config.links,
         startYear: config.startYear,
@@ -16,7 +16,7 @@ function prepareData(req) {
 }
 
 module.exports = function (req, res, next) {
-    const data = prepareData(req);
+    const data = prepareData(res);
 
     const titles = {
         seo: {

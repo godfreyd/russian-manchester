@@ -5,14 +5,19 @@ const { APP_VERSION } = process.env;
 
 module.exports = {
     csp: {
-        policies: {
-            'default-src': ['\'none\'']
-        },
-        useDefaultReportUri: true
+        directives: {
+            defaultSrc: ["'none'"],
+            scriptSrc: ["'self'", "'unsafe-eval'", "'unsafe-inline'", 'mc.yandex.ru', (req, res) => `'nonce-${res.locals.nonce}'` ],
+            styleSrc: ["'self'", "'unsafe-inline'", 'mc.yandex.ru'],
+            fontSrc: ["'self'", 'data:'],
+            mediaSrc: ["'self'"],
+            imgSrc: ["'self'", 'data:', 'mc.yandex.ru'],
+            connectSrc: ["'self'", 'mc.yandex.ru', 'hypermarket.ru']
+        }
     },
 
     logs: {
-        name: 'market-fe',
+        name: 'hypermarket-fe',
         streams: [{
             level: 'info',
             stream: process.stdout
@@ -41,10 +46,6 @@ module.exports = {
         reportProblemForm: 'https://forms.yandex-team.ru/surveys/11161/',
         faqPage: 'https://wiki.yandex-team.ru/hypercube/User-guide/Troubleshooting/',
         aboutPage: 'https://wiki.yandex-team.ru/hypercube'
-    },
-
-    sentry: {
-        dsn: process.env.SENTRY_DSN
     },
 
     notify: {

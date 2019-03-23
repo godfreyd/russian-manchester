@@ -3,8 +3,10 @@ const webpack = require('webpack');
 const nodeExternals = require('webpack-node-externals');
 
 const env = process.env.NODE_ENV;
+const IS_PRODUCTION = (env === 'production');
 
 const config = {
+    mode: IS_PRODUCTION ? 'production' : 'development',
     name: 'server',
     entry: path.join(__dirname, '../src/ssr'),
     output: {

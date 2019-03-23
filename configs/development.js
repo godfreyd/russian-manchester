@@ -1,9 +1,9 @@
 module.exports = {
+
     csp: {
-        policies: {
-            'connect-src': ['\'self\'', 'mc.yandex.ru', '*.hypercube.yandex-team.ru']
-        },
-        useDefaultReportUri: false
+        directives: {
+            connectSrc: ["'self'", 'mc.yandex.ru', '*.hypermarket.ru']
+        }
     },
 
     render: {
