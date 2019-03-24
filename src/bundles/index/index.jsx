@@ -1,7 +1,8 @@
 /* globals document */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import {  BrowserRouter, Switch, Route } from 'react-router-dom';
+import * as Sentry from '@sentry/browser';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Helmet from 'react-helmet';
 
 import { configureStore } from '../../redux/store';
@@ -10,17 +11,21 @@ import { getInitialState } from '../../redux/state';
 import './index.css';
 
 import AdminPage from '../../pages/admin';
-// import UserPage from '../../pages/user';
 import MainPage from '../../pages/main';
 import ErrorPage from '../../pages/error';
 
 export default class App extends Component {
+    // componentDidMount() {
+    //     const { sentry } = this.props.appData;
+
+    //     Sentry.init({ ...sentry });
+    // }
 
     render() {
-        // const { lang, title } = this.props.appData;
+        // const { lang='ru', title='Магазин', env } = this.props.appData;
 
         return (
-            <div className="App">
+            <div className="app">
                 <Helmet>
                     <html lang='ru' />
                     <title>Магазин</title>

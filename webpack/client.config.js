@@ -65,6 +65,11 @@ const config = {
         devtoolModuleFilenameTemplate: '/[resource-path]'
     },
     resolve: {
+        alias: {
+            // Используем react-dom из @hot-loader,
+            // для полной совместимости HRM с react 16+.
+            'react-dom': '@hot-loader/react-dom',
+        },
         extensions: ['.js', '.jsx']
     },
     module: {
@@ -141,6 +146,5 @@ if (IS_PRODUCTION) {
 } else {
     config.output.publicPath = '/static/build/';
 }
-
 
 module.exports = config;

@@ -17,9 +17,6 @@ function printWindowData(data) {
 }
 
 function renderDocument(helmet, { appHtml, appState, appData}) {
-
-    console.log(appData);
-
     return `<!doctype html>
 <html ${helmet.htmlAttributes.toString()}>
     <head>
@@ -34,7 +31,7 @@ function renderDocument(helmet, { appHtml, appState, appData}) {
         ${helmet.script.toString()}
     </head>
     <body ${helmet.bodyAttributes.toString()}>
-        <div id="root">${appHtml}</div>
+        <div id="mount">${appHtml}</div>
         <script nonce="${appData.nonce}">
             window.globalConfig = ${printWindowData(appData)};
         </script>

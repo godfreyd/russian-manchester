@@ -16,6 +16,11 @@ const config = {
         devtoolModuleFilenameTemplate: '/[absolute-resource-path]'
     },
     resolve: {
+        alias: {
+            // Используем react-dom из @hot-loader,
+            // для полной совместимости HRM с react 16+.
+            'react-dom': '@hot-loader/react-dom',
+        },
         extensions: ['.js', '.jsx']
     },
     externals: [nodeExternals()],
