@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Market Place",
   "scripts": {
-    "dev": "NODE_ENV=production webpack --config ./webpack/webpack.config.js",
+    "build": "NODE_ENV=production webpack --config ./webpack/webpack.config.js",
+    "dev": "NODE_ENV=development webpack --config ./webpack/webpack.config.js",
     "start": "node ./",
     "test": "test"
   },
@@ -34,7 +35,14 @@
     "babel-plugin-transform-require-ignore": "^0.1.1",
     "css-loader": "^2.1.1",
     "file-loader": "^3.0.1",
+    "json-loader": "^0.5.7",
     "lodash": "^4.17.11",
+    "mini-css-extract-plugin": "^0.5.0",
+    "null-loader": "^0.1.1",
+    "postcss": "^7.0.14",
+    "postcss-loader": "^3.0.0",
+    "postcss-nested": "^4.1.2",
+    "postcss-preset-env": "^6.6.0",
     "react-hot-loader": "^4.8.0",
     "style-loader": "^0.23.1",
     "svg-url-loader": "^2.3.2",
@@ -44,6 +52,7 @@
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0",
     "webpack-dev-middleware": "^3.6.1",
-    "webpack-hot-middleware": "^2.24.3"
+    "webpack-hot-middleware": "^2.24.3",
+    "webpack-node-externals": "^1.7.2"
   }
 }

@@ -4,11 +4,11 @@ const Express = require('express');
 const app = new Express();
 const router = require('./router');
 
-// if (config.render.hot) {
-//     app.use(require('./middlewares/app-render.hot'));
-// } else {
-//     app.use(require('./middlewares/app-render'));
-// }
+if (config.render.hot) {
+    app.use(require('./middlewares/app-render.hot'));
+} else {
+    app.use(require('./middlewares/app-render'));
+}
 
 app.use(Express.static(config.statics.dir));
 

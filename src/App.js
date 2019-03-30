@@ -9,7 +9,7 @@ class App extends Component {
                 <Button
                 theme="action" size="m" view="default" tone="default"
                     size='m'
-                    onClick={e => console.log('клик')}>
+                    onClick={() => alert('клик')}>
                         Кнопочка
                 </Button>
             </div>

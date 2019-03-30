@@ -9,8 +9,15 @@ module.exports = {
         www: './www'
     },
 
+    render: {
+        entry: './app/build.js',
+        webpackConfig: '../webpack.config.js',
+        publicPath: '/'
+    },
+
     server: {
-        host: os.hostname(),
+        // host: os.hostname(),
+        host: 'localhost',
         port: process.env.PORT || 8080
     },
 };

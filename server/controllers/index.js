@@ -1,3 +1,6 @@
+const ssr = require('../../src/ssr.jsx').default;
+
 module.exports = function (req, res, next) {
-    res.sendFile('index.html', { root: __dirname });
+    const result = ssr();
+    res.send(result.html);
 }

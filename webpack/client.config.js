@@ -1,14 +1,38 @@
 const path = require('path');
-const webpack = require('webpack');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const env = process.env.NODE_ENV;
 const IS_PRODUCTION = (env === 'production');
+const webpack = require('webpack');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 console.log('=>', env);
 
 let stylesLoader = [
-    'style-loader',
-    'css-loader'
+    IS_PRODUCTION ? MiniCssExtractPlugin.loader : 'style-loader',
+    'css-loader',
+    {
+        loader: 'postcss-loader',
+        options: {
+            plugins: () => [
+                require('postcss-nested'),
+                require('postcss-preset-env')({
+                    features: {
+                        'custom-properties': true
+                    }
+                })
+            ]
+        }
+    }
+];
+
+const commonLibs = [
+    '@babel/polyfill',
+    'react',
+    'react-dom',
+    'redux',
+    'react-redux',
+    'react-helmet',
+    'react-router-dom'
 ];
 
 const config = {
@@ -18,13 +42,17 @@ const config = {
         index: IS_PRODUCTION ?
             path.join(__dirname, '../src/index') :
             [
+                'react-hot-loader/patch',
+                'webpack-hot-middleware/client',
                 path.join(__dirname, '../src/index')
-            ]
+            ],
+        common: commonLibs
     },
     output: {
         path: path.join(__dirname, '../static/build'),
         filename: '[name].build.js',
-        library: '__init__'
+        library: '__init__',
+        devtoolModuleFilenameTemplate: '/[resource-path]'
     },
     resolve: {
         extensions: ['.js', '.jsx']
@@ -70,17 +98,23 @@ const config = {
     },
     optimization: {
         minimize:  IS_PRODUCTION ? true : false,
-        minimizer: [],
+        concatenateModules: false,
         splitChunks: {
+            chunks: 'all',
             name: 'common',
             cacheGroups: {
                 vendors: {
                     filename: 'common.js'
                 }
             }
-        }
+        },
+        minimizer: []
     },
     plugins: [
+        new webpack.HotModuleReplacementPlugin(),
+        new MiniCssExtractPlugin({
+            filename: "[name].build.css"
+        }),
         new webpack.NoEmitOnErrorsPlugin(),
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify(env)
@@ -91,18 +125,14 @@ const config = {
 }
 
 if (IS_PRODUCTION) {
-    config.plugins.push(new webpack.LoaderOptionsPlugin({
-        minimize: true
-    }));
     config.optimization.minimizer.push(new UglifyJsPlugin({
         cache: true,
         uglifyOptions: {
-            sourceMap: true,
-            ie8: true,
-            output: {
-                comments: false,
-            },
-            compress: { warnings: false }
+            compress: {
+                warnings: false,
+                drop_console: true,
+                unsafe: true
+            }
         },
         extractComments: true,
     }));
