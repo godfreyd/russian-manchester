@@ -1,11 +1,10 @@
 const path = require('path');
-const env = process.env.NODE_ENV;
-const IS_PRODUCTION = (env === 'production');
 const webpack = require('webpack');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-console.log('=>', env);
+const env = process.env.NODE_ENV;
+const IS_PRODUCTION = (env === 'production');
 
 let stylesLoader = [
     IS_PRODUCTION ? MiniCssExtractPlugin.loader : 'style-loader',
@@ -27,30 +26,69 @@ let stylesLoader = [
 
 const commonLibs = [
     '@babel/polyfill',
+
+    'local-storage',
+
+    'lodash/get',
+    'lodash/flatten',
+    'lodash/find',
+    'lodash/groupBy',
+    'lodash/isEmpty',
+    'lodash/isEqual',
+    'lodash/map',
+    'lodash/mapKeys',
+    'lodash/mapValues',
+    'lodash/omit',
+    'lodash/partition',
+    'lodash/pick',
+    'lodash/set',
+
+    'querystringify',
+
     'react',
     'react-dom',
+    'react-router-dom',
+
+    '@bem-react/classname',
+    'prop-types',
+
     'redux',
     'react-redux',
+
+    'redux-actions',
+    'redux-saga',
+
+    'react-addons-css-transition-group',
+    'react-copy-to-clipboard',
     'react-helmet',
-    'react-router-dom'
+    'react-highlight-words',
+    'react-hover-observer',
+    'react-notification-system',
+
+    'throttle-debounce',
+
+    '@sentry/browser'
 ];
 
 const config = {
     mode: IS_PRODUCTION ? 'production' : 'development',
     name: 'client',
     entry: {
-        index: IS_PRODUCTION ?
-            path.join(__dirname, '../src/index') :
-            [
+        index: IS_PRODUCTION ? [
+            '@babel/polyfill',
+            path.join(__dirname, '../src/bundles/index/entry')
+        ] : [
+                '@babel/polyfill',
                 'react-hot-loader/patch',
                 'webpack-hot-middleware/client',
-                path.join(__dirname, '../src/index')
+                path.join(__dirname, '../src/bundles/index/entry')
             ],
         common: commonLibs
     },
     output: {
         path: path.join(__dirname, '../static/build'),
         filename: '[name].build.js',
+        libraryTarget: 'var',
         library: '__init__',
         devtoolModuleFilenameTemplate: '/[resource-path]'
     },
@@ -61,7 +99,6 @@ const config = {
         rules: [
             {
                 test: /\.jsx?$/,
-                exclude: /(node_modules|bower_components)/,
                 loader: 'babel-loader',
                 options: require('../.babelrc').client
             },
@@ -129,9 +166,7 @@ if (IS_PRODUCTION) {
         cache: true,
         uglifyOptions: {
             compress: {
-                warnings: false,
-                drop_console: true,
-                unsafe: true
+                warnings: false
             }
         },
         extractComments: true,

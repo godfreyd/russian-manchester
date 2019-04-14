@@ -1,4 +1,5 @@
 require('@babel/register')(require('../../.babelrc').server);
+require('@babel/polyfill');
 const webpack = require('webpack');
 const hotMiddleware = require('webpack-hot-middleware');
 const webpackDevMiddleware = require('webpack-dev-middleware');

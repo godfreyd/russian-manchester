@@ -5,6 +5,7 @@ const indexController = require('./controllers/index');
 const router = express.Router();
 
 router.get('/', indexController);
+router.get('/search', indexController);
 
 router.get('*', (req, res, next) => {
     res.status(404);
