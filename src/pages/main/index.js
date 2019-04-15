@@ -5,11 +5,9 @@ import { fetchDevices } from '../../redux/actions/devices';
 import { fetchFilters } from '../../redux/actions/filters';
 import { fetchMyDevices } from '../../redux/actions/mydevices';
 
-import withLocalStorage from '../../decorators/local-storage';
-
 import MainPage from './main-page';
 
-export default withLocalStorage(connect(mapStateToProps, mapDispatchToProps)(MainPage));
+export default connect(mapStateToProps, mapDispatchToProps)(MainPage);
 
 function mapStateToProps(state) {
     return {

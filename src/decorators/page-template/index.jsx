@@ -1,6 +1,6 @@
 import React from 'react';
 import { cn } from '@bem-react/classname';
-import Header from '../../blocks/header';
+import Header from '../../components/header';
 
 import './page.css';
 

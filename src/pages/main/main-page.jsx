@@ -3,7 +3,7 @@ import { cn } from '@bem-react/classname';
 import { withRouter } from 'react-router-dom';
 import { compose } from 'redux';
 
-// import AppNEW from '../../AppNew';
+import AppNEW from '../../AppNew';
 
 import pageTemplate from '../../decorators/page-template';
 
@@ -22,7 +22,7 @@ class MainPage extends React.Component {
         return (
             <div className={classNames()}>
                 <div className={classNames('content')}>
-               Привет
+               <AppNEW/>
                 </div>
             </div>
         );
