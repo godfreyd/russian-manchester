@@ -1,0 +1,19 @@
+.highlight
+{
+    &_type
+    {
+        &_default
+        {
+            color: #000;
+            background-color: #fcecb8
+        }
+
+        &_search
+        {
+            font-family: 'Yandex Sans Text Web', sans-serif;
+            font-weight: 600;
+
+            background-color: transparent;
+        }
+    }
+}

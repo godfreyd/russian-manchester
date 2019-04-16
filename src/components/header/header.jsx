@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import Link from '../../common.components/link';
 
 import HeaderLogo from './__logo';
-
+import Search from '../search';
 
 import i18n from '../i18n';
 
@@ -23,7 +23,7 @@ const Header = ({ withSearch }) => {
             </div>
 
             <div className={classNames('search')}>
-                {withSearch && <div>Моралис</div>}
+                {withSearch && <Search />}
             </div>
 
         </header>

@@ -1,0 +1,26 @@
+.popup2.popup2_theme_normal
+{
+    border: 0;
+
+    &::before
+    {
+        border: 1px solid #ebeff1;
+        border-radius: 3px;
+        box-shadow: 0 2px 10px 0 rgba(0, 0, 0, .05);
+    }
+
+    & .popup2__tail
+    {
+        margin: 0 0 0 1px;
+
+        &::before
+        {
+            border-color: #ebeff1
+        }
+
+        &::after
+        {
+            background: #fff;
+        }
+    }
+}
