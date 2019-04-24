@@ -11,14 +11,14 @@
 
         &_type
         {
-            &_devices-search
+            &_products-search
             {
                 padding: 2px 15px;
 
                 color: #3f3f3f;
             }
 
-            &_market-devices
+            &_market-products
             {
                 padding: 7px 15px;
             }
@@ -36,7 +36,7 @@
 
         &_type
         {
-            &_devices-search
+            &_products-search
             {
                 width: 242px;
 
@@ -44,7 +44,7 @@
                 border-radius: 2px;
             }
 
-            &_market-devices
+            &_market-products
             {
                 width: 366px;
 
@@ -54,7 +54,7 @@
         }
     }
 
-    &__input_type_devices-search
+    &__input_type_products-search
     {
         & .textinput
         {

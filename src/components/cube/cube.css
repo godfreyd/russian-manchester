@@ -1,0 +1,40 @@
+.cube
+{
+    margin: 0 20px 20px;
+
+    text-align: left;
+
+    &__header
+    {
+        display: flex;
+        align-items: center;
+
+        height: 38px;
+
+        margin-bottom: 25px;
+
+        & .badge
+        {
+            margin-top: 3px;
+        }
+    }
+
+    &__title
+    {
+        display: inline-block;
+
+        margin-left: 20px;
+
+        letter-spacing: .27px;
+
+        font: 27px 'Yandex Sans Display', sans-serif;
+        font-weight: 600;
+        line-height: 38px;
+    }
+
+    &__products
+    {
+        display: flex;
+        flex-flow: row wrap;
+    }
+}

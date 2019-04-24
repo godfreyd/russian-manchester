@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import propTypes from 'prop-types';
 import { cn } from '@bem-react/classname';
 
 import Input from '../input';
@@ -190,13 +190,13 @@ export default class Suggest extends React.Component {
     }
 
     static propTypes = {
-        results: PropTypes.array,
-        type: PropTypes.string.isRequired,
-        inputPlaceholder: PropTypes.string.isRequired,
-        inputInitValue: PropTypes.string,
-        fetchSuggest: PropTypes.func.isRequired,
-        getOptionValue: PropTypes.func,
-        onInputChange: PropTypes.func,
-        onSelectOption: PropTypes.func.isRequired
+        results: propTypes.array,
+        type: propTypes.string.isRequired,
+        inputPlaceholder: propTypes.string.isRequired,
+        inputInitValue: propTypes.string,
+        fetchSuggest: propTypes.func.isRequired,
+        getOptionValue: propTypes.func,
+        onInputChange: propTypes.func,
+        onSelectOption: propTypes.func.isRequired
     }
 }

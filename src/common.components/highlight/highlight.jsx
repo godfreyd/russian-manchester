@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import propTypes from 'prop-types';
 import { cn } from '@bem-react/classname';
 import Highlighter from 'react-highlight-words';
 
@@ -20,10 +20,10 @@ const Highlight = ({ type = 'default', word, text }) => {
     );
 };
 
-Highlight.PropTypes = {
-    type: PropTypes.string,
-    text: PropTypes.string.isRequired,
-    word: PropTypes.string.isRequired
+Highlight.propTypes = {
+    type: propTypes.string,
+    text: propTypes.string.isRequired,
+    word: propTypes.string.isRequired
 };
 
 export default Highlight;

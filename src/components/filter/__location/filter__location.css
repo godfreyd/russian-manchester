@@ -1,0 +1,12 @@
+.filter
+{
+    &__location
+    {
+        margin: 10px 0 0 60px;
+        padding-bottom: 10px;
+
+        text-align: left;
+
+        border-bottom: 1px solid #e1e6e8;
+    }
+}

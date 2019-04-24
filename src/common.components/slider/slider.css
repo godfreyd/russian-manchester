@@ -1,0 +1,78 @@
+.slider
+{
+    &__header
+    {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__title
+    {
+        font-family: 'Yandex Sans Text Web', sans-serif;
+        font-weight: 600;
+    }
+
+    &__arrows
+    {
+        display: grid;
+        grid-template-columns: 20px 20px;
+        grid-column-gap: 15px;
+
+        user-select: none;
+    }
+
+    &__arrow
+    {
+        & .icon
+        {
+            opacity: .1;
+        }
+
+        &_enabled
+        {
+            & .icon
+            {
+                cursor: pointer;
+
+                opacity: .3;
+
+                &:hover
+                {
+                    opacity: .6;
+                }
+            }
+        }
+    }
+
+    &_type
+    {
+        &_product
+        {
+            & .slider__title
+            {
+                font-size: 22px;
+                line-height: 22px;
+            }
+
+            & .slider__content
+            {
+                margin-top: 17px;
+            }
+        }
+
+        &_user
+        {
+            & .slider__title
+            {
+                font-size: 27px;
+                line-height: 30px;
+            }
+
+            & .slider__content
+            {
+                margin-top: 25px;
+            }
+        }
+    }
+}

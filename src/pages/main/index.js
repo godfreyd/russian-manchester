@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
 import { debounce } from 'throttle-debounce';
 
-import { fetchDevices } from '../../redux/actions/devices';
+import { fetchProducts } from '../../redux/actions/products';
 import { fetchFilters } from '../../redux/actions/filters';
-import { fetchMyDevices } from '../../redux/actions/mydevices';
+import { fetchMyProducts } from '../../redux/actions/myproducts';
 
 import MainPage from './main-page';
 
@@ -12,16 +12,16 @@ export default connect(mapStateToProps, mapDispatchToProps)(MainPage);
 function mapStateToProps(state) {
     return {
         filters: state.filters.filters,
-        myDevices: state.mydevices.mydevices,
+        myProducts: state.myproducts.myproducts,
         filtersValue: state.filters.filtersValue
     };
 }
 
 function mapDispatchToProps(dispatch) {
     return {
-        getMyDeviceList: () => dispatch(fetchMyDevices()),
-        updateDeviceList: debounce(300, query => {
-            return dispatch(fetchDevices(query));
+        getMyProductList: () => dispatch(fetchMyProducts()),
+        updateProductList: debounce(300, query => {
+            return dispatch(fetchProducts(query));
         }),
         getFilters: () => dispatch(fetchFilters())
     };

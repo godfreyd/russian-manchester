@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import propTypes from 'prop-types';
 import { cn } from '@bem-react/classname';
 
 import './icon.css';
@@ -11,8 +11,8 @@ const Icon = ({ onClick, type }) => (
 );
 
 Icon.propTypes = {
-    type: PropTypes.string.isRequired,
-    onClick: PropTypes.func
+    type: propTypes.string.isRequired,
+    onClick: propTypes.func
 };
 
 export default Icon;

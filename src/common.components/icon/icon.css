@@ -64,12 +64,12 @@
             background-image: url('images/lock.svg');
         }
 
-        &_devices-empty
+        &_products-empty
         {
             width: 60px;
             height: 60px;
 
-            background-image: url('images/devices-empty.svg');
+            background-image: url('images/products-empty.svg');
         }
 
         &_question-blue
@@ -143,7 +143,7 @@
             }
         }
 
-        &_device-android
+        &_product-android
         {
             width: 130px;
             height: 130px;

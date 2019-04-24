@@ -1,0 +1,33 @@
+.cube-status
+{
+    &__dot
+    {
+        display: inline-block;
+
+        width: 9px;
+        height: 9px;
+
+        border-radius: 50%;
+
+        &_status
+        {
+            &_online
+            {
+                background-color: #98ce60;
+            }
+
+            &_offline
+            {
+                background-color: #f00;
+            }
+        }
+    }
+
+    &__status
+    {
+        margin: 0 0 0 6px;
+
+        font-size: 14px;
+        line-height: 25px;
+    }
+}

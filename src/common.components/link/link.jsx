@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import propTypes from 'prop-types';
 import { cn } from '@bem-react/classname';
 import { Link as InternalLink, NavLink } from 'react-router-dom';
 
@@ -64,13 +64,13 @@ const Link = ({ url, navLink = false, internal = false, target = '_blank', child
 };
 
 Link.propTypes = {
-    url: PropTypes.string,
-    target: PropTypes.string,
-    children: PropTypes.node.isRequired,
-    type: PropTypes.string,
-    internal: PropTypes.bool,
-    navLink: PropTypes.bool,
-    onClick: PropTypes.func
+    url: propTypes.string,
+    target: propTypes.string,
+    children: propTypes.node.isRequired,
+    type: propTypes.string,
+    internal: propTypes.bool,
+    navLink: propTypes.bool,
+    onClick: propTypes.func
 };
 
 export default Link;

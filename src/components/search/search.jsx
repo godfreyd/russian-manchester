@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import propTypes from 'prop-types';
 import { cn } from '@bem-react/classname';
 import { withRouter } from 'react-router-dom';
 import { debounce } from 'throttle-debounce';
@@ -24,7 +24,7 @@ class Search extends React.Component {
 
         this.initValue = searchValue || '';
 
-        this._devicesSuggest = debounce(200, props.devicesSuggest);
+        this._productsSuggest = debounce(200, props.productsSuggest);
         this._debounceSearch = debounce(1000, this._search);
     }
 
@@ -54,11 +54,11 @@ class Search extends React.Component {
      * @returns {void}
      * @private
      */
-    _hideDevicesContainer() {
-        const [deviceContainer] = document.getElementsByClassName('devices__container');
+    _hideProductsContainer() {
+        const [productContainer] = document.getElementsByClassName('products__container');
 
-        if (deviceContainer) {
-            deviceContainer.classList.add('darkening');
+        if (productContainer) {
+            productContainer.classList.add('darkening');
         }
     }
 
@@ -77,7 +77,7 @@ class Search extends React.Component {
             search: `?text=${text}`
         } : '/';
 
-        this._hideDevicesContainer();
+        this._hideProductsContainer();
         history.replace(nextHistory);
         filterChange('text', query);
     }
@@ -89,10 +89,10 @@ class Search extends React.Component {
      * @returns {void}
      * @private
      */
-    _fetchDevicesSuggest = text => {
+    _fetchProductsSuggest = text => {
         const { tesseractsValue } = this.props;
 
-        this._devicesSuggest(text, tesseractsValue);
+        this._productsSuggest(text, tesseractsValue);
     }
 
     /**
@@ -113,11 +113,11 @@ class Search extends React.Component {
         return (
             <div className={classNames()}>
                 <Suggest
-                    type="devices-search"
-                    inputPlaceholder={i18n('devices-search')}
+                    type="products-search"
+                    inputPlaceholder={i18n('products-search')}
                     inputInitValue={this.initValue}
                     results={suggestResults}
-                    fetchSuggest={this._fetchDevicesSuggest}
+                    fetchSuggest={this._fetchProductsSuggest}
                     getOptionValue={this._getOptionValue}
                     onSelectOption={this._search}
                     onInputChange={this._debounceSearch}
@@ -127,11 +127,11 @@ class Search extends React.Component {
     }
 
     static propTypes = {
-        filterChange: PropTypes.func.isRequired,
-        suggestResults: PropTypes.array,
-        tesseractsValue: PropTypes.array,
-        location: PropTypes.object.isRequired,
-        history: PropTypes.object.isRequired
+        filterChange: propTypes.func.isRequired,
+        suggestResults: propTypes.array,
+        tesseractsValue: propTypes.array,
+        location: propTypes.object.isRequired,
+        history: propTypes.object.isRequired
     }
 }
 

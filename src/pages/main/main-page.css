@@ -11,7 +11,7 @@
 
         /* 3 девайса */
         grid-template-columns: 250px 730px 280px;
-        grid-template-areas: 'filter devices user-devices';
+        grid-template-areas: 'filter products user-products';
 
         margin: 35px 0;
     }

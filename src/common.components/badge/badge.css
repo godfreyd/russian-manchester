@@ -1,0 +1,90 @@
+.badge
+{
+    z-index: 2;
+
+    display: inline-table;
+
+    height: 18px;
+
+    border-radius: 2px;
+
+    animation: show-badge .3s ease-in-out;
+
+    &_type
+    {
+        &_takeAway,
+        &_queue,
+        &_operator
+        {
+            background: #999;
+        }
+
+        &_service,
+        &_offline
+        {
+            background: #00b7ac
+        }
+
+        &_inventory
+        {
+            background: repeating-linear-gradient(
+                -45deg,
+                #999,
+                #999 12px,
+                #777 12px,
+                #777 24px
+            );
+        }
+
+        &_undefined,
+        &_unavailable
+        {
+            background: #000;
+        }
+
+        &_need-return,
+        &_reserved
+        {
+            background: #ff7f66;
+        }
+
+        &_can-take,
+        &_my-reserved
+        {
+            background: #98ce60;
+        }
+
+        &_expired
+        {
+            background: #f00;
+        }
+    }
+
+    &__status-text
+    {
+        padding: 3px 3.75px 3px 5px;
+
+        letter-spacing: 1.25px;
+        text-transform: uppercase;
+
+        font: 10px 'Yandex Sans Text Web', sans-serif;
+        font-weight: 600;
+
+        line-height: 12px;
+
+        color: #fff;
+    }
+}
+
+@keyframes show-badge
+{
+    from
+    {
+        opacity: 0;
+    }
+
+    to
+    {
+        opacity: 1;
+    }
+}

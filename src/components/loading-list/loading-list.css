@@ -1,0 +1,112 @@
+.loading-list
+{
+    position: relative;
+
+    overflow: hidden;
+
+    &__title
+    {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+
+        padding: 0 0 20px;
+
+        font-family: 'Yandex Sans Text Web', sans-serif;
+        font-size: 22px;
+        font-weight: 600;
+        line-height: 22px;
+    }
+
+    &_size_l &__title
+    {
+        padding: 0 0 25px;
+
+        font-size: 27px;
+        line-height: 30px;
+    }
+
+    &__list
+    {
+        overflow: auto;
+
+        box-sizing: border-box;
+        height: inherit;
+        min-height: inherit;
+        max-height: inherit;
+
+        border-top: 42px solid transparent;
+    }
+
+    &_size_l &__list
+    {
+        border-top: 55px solid transparent;
+    }
+
+    &__empty
+    {
+        margin: 0 0 20px;
+    }
+
+    &__loader
+    {
+        position: absolute;
+        right: 0;
+        bottom: -52px;
+        left: 0;
+
+        overflow: hidden;
+
+        padding: 0 0 10px;
+
+        text-align: center;
+
+        box-shadow: none;
+        will-change: bottom, box-shadow;
+
+        transition: bottom .15s linear, box-shadow .05s linear .15s;
+
+        & .y-spin
+        {
+            display: inline-block;
+        }
+    }
+
+    &_loading &__loader
+    {
+        bottom: 0;
+
+        transition: bottom .15s linear, box-shadow .05s linear;
+    }
+
+    &_theme_white &__title
+    {
+        background: #fff;
+    }
+
+    &_theme_blue &__title
+    {
+        background: #f6f7f9;
+    }
+
+    &_theme_white &__loader
+    {
+        background: rgba(255, 255, 255, .95);
+    }
+
+    &_theme_blue &__loader
+    {
+        background: rgba(246, 247, 249, .95);
+    }
+
+    &_loading&_theme_white &__loader
+    {
+        box-shadow: 0 0 33px 33px rgba(255, 255, 255, .95);
+    }
+
+    &_loading&_theme_blue &__loader
+    {
+        box-shadow: 0 0 33px 33px rgba(246, 247, 249, .95);
+    }
+}

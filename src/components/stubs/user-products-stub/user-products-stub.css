@@ -1,0 +1,17 @@
+.user-products-stub
+{
+    &__title
+    {
+        margin: 10px 0 36px 20px;
+    }
+
+    &__product
+    {
+        margin-left: 20px;
+
+        & .rect
+        {
+            margin-bottom: 10px;
+        }
+    }
+}

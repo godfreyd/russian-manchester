@@ -1,0 +1,163 @@
+.slot
+{
+    width: 25px;
+
+    &__cell
+    {
+        position: relative;
+
+        height: 40px;
+
+        cursor: pointer;
+    }
+
+    &__wire
+    {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        height: 3px;
+
+        transition: opacity .1s linear;
+    }
+
+    &__cell-anchor
+    {
+        position: absolute;
+        top: -6px;
+        bottom: -6px;
+        left: 10px;
+
+        visibility: hidden;
+
+        pointer-events: none;
+    }
+
+    &__product-screen,
+    &__product-button
+    {
+        fill: #fff;
+    }
+
+    & .icon_type_question-blue
+    {
+        display: block;
+
+        margin: auto;
+    }
+
+    &__inventory
+    {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 3px;
+        left: 0;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        transition: opacity .1s linear;
+    }
+
+    &__cell-name
+    {
+        margin: 5px 0 0;
+
+        text-align: center;
+
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    &__selection-filler
+    {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        pointer-events: none;
+
+        opacity: 0;
+        border-radius: 4px;
+        background: #2e93fd;
+
+        transition: opacity .15s linear;
+    }
+
+    &__cell:hover &__selection-filler
+    {
+        opacity: .3;
+    }
+
+    &_selected &__cell &__selection-filler
+    {
+        z-index: auto;
+
+        opacity: 1;
+    }
+
+    &_selected &__wire,
+    &_selected &__inventory
+    {
+        opacity: 0;
+    }
+
+    &_type_lightning &__wire
+    {
+        background-color: var(--color-slot-type-lightning);
+    }
+
+    &_type_type-c &__wire
+    {
+        background-color: var(--color-slot-type-type-c);
+    }
+
+    &_type_micro-usb &__wire
+    {
+        background-color: var(--color-slot-type-micro-usb);
+    }
+
+    &_type_lightning &__product
+    {
+        fill: var(--color-slot-type-lightning);
+    }
+
+    &_type_type-c &__product
+    {
+        fill: var(--color-slot-type-type-c);
+    }
+
+    &_type_micro-usb &__product
+    {
+        fill: var(--color-slot-type-micro-usb);
+    }
+
+    &_type_none &__product
+    {
+        fill: var(--color-slot-type-none);
+    }
+
+    &__history-popup
+    {
+        width: 250px;
+        padding: 20px 28px 0;
+
+        & .loading-list
+        {
+            max-height: 70vh;
+        }
+    }
+
+    &__close
+    {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+    }
+}

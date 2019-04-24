@@ -1,0 +1,35 @@
+.product-stub
+{
+    display: inline-block;
+
+    width: 200px;
+    height: 325px;
+    margin: 0 0 20px 20px;
+
+    border: 1px solid #ebeff1;
+    border-radius: 3px;
+
+    &__icon
+    {
+        display: flex;
+        justify-content: center;
+
+        margin: 25px;
+    }
+
+    &__description
+    {
+        padding: 0 20px;
+    }
+
+    & .rect
+    {
+        margin-bottom: 10px;
+    }
+
+    & .button2
+    {
+        width: 160px;
+        margin-top: 1px;
+    }
+}

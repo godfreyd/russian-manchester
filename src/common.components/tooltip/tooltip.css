@@ -1,0 +1,19 @@
+.tooltip
+{
+    display: inline-block;
+
+    &_type
+    {
+        &_cube-tooltip
+        {
+            height: 16px;
+
+            margin-top: 3px;
+
+            & .tooltip__icon
+            {
+                margin: 0 8px;
+            }
+        }
+    }
+}

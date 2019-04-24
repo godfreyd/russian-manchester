@@ -1,6 +1,6 @@
 /* globals document */
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import propTypes from 'prop-types';
 import { Switch, Route } from 'react-router-dom';
 import Helmet from 'react-helmet';
 
@@ -33,12 +33,12 @@ export default class App extends Component {
 }
 
 App.propTypes = {
-    appData: PropTypes.object
+    appData: propTypes.object
 };
 
 App.childContextTypes = {
-    lang: PropTypes.string,
-    i18n: PropTypes.object
+    lang: propTypes.string,
+    i18n: propTypes.object
 };
 
 App.getInitialState = getInitialState;

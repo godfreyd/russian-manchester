@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import propTypes from 'prop-types';
 
 import LegoPopup from 'lego-on-react/src/components/popup/popup.react';
 
@@ -28,8 +28,8 @@ const Popup = props => (
     </ExtendedLegoPopup>
 );
 
-Popup.PropTypes = {
-    children: PropTypes.string.isRequired
+Popup.propTypes = {
+    children: propTypes.string.isRequired
 };
 
 export default Popup;

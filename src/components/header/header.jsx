@@ -1,6 +1,6 @@
 import React from 'react';
 import { cn } from '@bem-react/classname';
-import PropTypes from 'prop-types';
+import propTypes from 'prop-types';
 
 import Link from '../../common.components/link';
 
@@ -31,7 +31,7 @@ const Header = ({ withSearch }) => {
 };
 
 Header.propTypes = {
-    withSearch: PropTypes.bool
+    withSearch: propTypes.bool
 };
 
 export default Header;

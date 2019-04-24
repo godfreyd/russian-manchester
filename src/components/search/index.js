@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import { changeFilters } from '../../redux/actions/filters';
-import { fetchDevicesSuggest } from '../../redux/actions/devices';
+import { fetchProductsSuggest } from '../../redux/actions/products';
 
 import Search from './search';
 
@@ -9,7 +9,7 @@ export default connect(mapStateToProps, mapDispatchToProps)(Search);
 
 function mapStateToProps(state) {
     return {
-        suggestResults: state.devices.suggest,
+        suggestResults: state.products.suggest,
         tesseractsValue: state.filters.filtersValue.tesseracts,
         searchValue: state.filters.filtersValue.text
     };
@@ -18,6 +18,6 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
     return {
         filterChange: (field, value) => dispatch(changeFilters({ field, value })),
-        devicesSuggest: (text, tesseracts) => dispatch(fetchDevicesSuggest({ text, tesseracts }))
+        productsSuggest: (text, tesseracts) => dispatch(fetchProductsSuggest({ text, tesseracts }))
     };
 }

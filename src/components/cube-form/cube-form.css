@@ -1,0 +1,66 @@
+.cube-form
+{
+    &__title
+    {
+        margin: 0 0 30px;
+
+        letter-spacing: .27px;
+
+        font: 27px 'Yandex Sans Display', sans-serif;
+        font-weight: 600;
+        line-height: 38px;
+    }
+
+    &__control
+    {
+        display: inline-block;
+
+        width: calc((100% - 16px) / 2);
+
+        &_type_cancel
+        {
+            margin-left: 16px;
+        }
+    }
+
+    &__title,
+    &__controls-container_center
+    {
+        text-align: center;
+    }
+
+    &__controls-container
+    {
+        height: 36px;
+        margin: 28px 0 0 220px;
+
+        &_center
+        {
+            margin-left: 0;
+        }
+    }
+
+    &__controls-container_center &__control
+    {
+        width: auto;
+    }
+
+    & .product-info-row
+    {
+        grid-template-columns: 185px auto;
+        grid-column-gap: 35px;
+
+        font-size: 14px;
+        line-height: 32px;
+
+        &__value
+        {
+            min-width: 350px;
+        }
+
+        & + .product-info-row
+        {
+            margin-top: 10px;
+        }
+    }
+}

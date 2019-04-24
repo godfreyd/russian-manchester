@@ -7,6 +7,9 @@ import AppNEW from '../../AppNew';
 
 import pageTemplate from '../../decorators/page-template';
 
+import Filter from '../../components/filter';
+import Products from '../../components/products';
+
 import './main-page.css';
 
 const classNames = cn('main-page');
@@ -22,7 +25,7 @@ class MainPage extends React.Component {
         return (
             <div className={classNames()}>
                 <div className={classNames('content')}>
-               <AppNEW/>
+                <Filter />
                 </div>
             </div>
         );

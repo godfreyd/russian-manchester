@@ -1,0 +1,14 @@
+.filter-stub
+{
+    margin: 10px 0 0 60px;
+
+    & .rect
+    {
+        margin-bottom: 20px;
+    }
+
+    &__filter
+    {
+        margin-bottom: 40px;
+    }
+}

@@ -1,0 +1,59 @@
+.loading-list
+{
+    &__item
+    {
+        display: grid;
+        grid-template-columns: 38px auto;
+        grid-column-gap: 10px;
+
+        margin: 0 0 14px;
+
+        line-height: 18px;
+    }
+
+    &__item_type_user
+    {
+        grid-template-columns: 50px auto;
+
+        margin: 0 0 20px;
+    }
+
+    &__item-info
+    {
+        font-size: 12px;
+
+        color: #999;
+    }
+
+    &__item_type_user &__item-info
+    {
+        overflow: hidden;
+
+        margin: 1px 0 0;
+    }
+
+    &__item-title
+    {
+        margin: 0 0 1px;
+
+        font-size: 14px;
+
+        color: #000;
+    }
+
+    &__item_type_product &__item-title a,
+    &__item_type_tesseract &__item-title a
+    {
+        overflow-wrap: break-word;
+
+        width: 100%;
+    }
+
+    &__item_type_user &__item-title
+    {
+        overflow: hidden;
+
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+}

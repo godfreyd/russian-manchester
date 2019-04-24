@@ -1,13 +1,13 @@
 import { combineReducers } from 'redux';
 
-import devices from './devices';
+import products from './products';
 import product from './product';
 import filters from './filters';
-import mydevices from './mydevices';
+import myproducts from './myproducts';
 
 export default combineReducers({
-    devices,
+    products,
     product,
     filters,
-    mydevices
+    myproducts
 });

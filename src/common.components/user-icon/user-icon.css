@@ -1,0 +1,10 @@
+.user-icon
+{
+    &_type
+    {
+        &_round
+        {
+            border-radius: 50%;
+        }
+    }
+}

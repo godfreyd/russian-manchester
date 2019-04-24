@@ -1,0 +1,67 @@
+.product-info-row
+{
+    display: grid;
+    grid-template-columns: 102px auto;
+
+    grid-gap: 14px;
+
+    line-height: 32px;
+
+    &__key
+    {
+        opacity: .5;
+    }
+
+    &__key,
+    &__value
+    {
+        overflow: hidden;
+
+        white-space: nowrap;
+        text-overflow: ellipsis;
+
+        &::after
+        {
+            position: absolute;
+            z-index: 20;
+
+            display: block;
+            overflow: visible;
+
+            width: auto;
+            max-width: 50rem;
+            margin-top: -1.85rem;
+
+            content: attr(title);
+            white-space: normal;
+            text-overflow: inherit;
+            word-wrap: break-word;
+
+            opacity: 0;
+
+            color: #000;
+
+            background: #fff;
+
+            transition: opacity .15s ease;
+        }
+
+        &:hover::after
+        {
+            opacity: 1;
+        }
+    }
+
+    &__label
+    {
+        &_required
+        {
+            &::after
+            {
+                content: ' *';
+
+                color: #f00;
+            }
+        }
+    }
+}

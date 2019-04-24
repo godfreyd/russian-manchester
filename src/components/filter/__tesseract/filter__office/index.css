@@ -1,0 +1,33 @@
+.filter
+{
+    &__office
+    {
+        margin-bottom: 19px;
+    }
+
+    & .checkbox-with-tooltip
+    {
+        & .icon_type_gear
+        {
+            position: relative;
+            top: 7px;
+
+            margin-left: 8px;
+
+            opacity: 0;
+        }
+
+        &:hover
+        {
+            & .icon_type_gear
+            {
+                opacity: .3;
+
+                &:hover
+                {
+                    opacity: .6;
+                }
+            }
+        }
+    }
+}
