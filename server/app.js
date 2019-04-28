@@ -4,9 +4,14 @@ const config = require('configs-overload')('./configs', { env: env });
 const cookieParser = require('cookie-parser');
 const Express = require('express');
 const uuidv4 = require('uuid/v4');
-const router = require('./router');
 const helmet = require('helmet');
 const csp = require('helmet-csp');
+
+
+const authCheck = require('./middlewares/auth-check');
+const expressRenewBbSession = require('./middlewares/express-renew-bb-session');
+const userPermissions = require('./middlewares/user-permissions');
+const router = require('./router');
 
 const { APP_VERSION } = process.env;
 
@@ -32,7 +37,7 @@ if (config.render.hot) {
     app.use(require('./middlewares/app-render'));
 }
 
-app.use(bunyanLogger(config.logs));
+
 
 app.use(`/static/${APP_VERSION}`, Express.static(config.statics.dir, {
     fallthrough: false,
@@ -43,6 +48,19 @@ app.use(`/static/${APP_VERSION}`, Express.static(config.statics.dir, {
 app.use('/', Express.static(config.statics.www, {
     maxAge: '14 days'
 }));
+
+app.use(bunyanLogger(config.logs));
+
+if (env === 'development') {
+    app.use(require('./middlewares/mock-blackbox'));
+} else {
+   // TODO: passport
+}
+
+app.use(authCheck(config.passport));
+app.use(expressRenewBbSession(config.pass));
+
+app.use(userPermissions);
 
 app.use(router);
 

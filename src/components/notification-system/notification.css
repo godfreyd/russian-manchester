@@ -1,0 +1,28 @@
+/* Переопределяем стили для нотификаций */
+
+/* stylelint-disable declaration-no-important  */
+.notifications-br
+{
+    z-index: 30000 !important;
+}
+
+.notification
+{
+    font-family: 'Yandex Sans Text Web', sans-serif;
+
+    color: #fff !important;
+    border: 0 !important;
+    border-radius: 4px !important;
+
+    &-success
+    {
+        background-color: #5ac977 !important;
+    }
+
+    &-error
+    {
+        background-color: #ff5668 !important;
+    }
+}
+
+/* stylelint-enable */

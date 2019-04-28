@@ -2,6 +2,22 @@ const os = require('os');
 const { APP_VERSION } = process.env;
 
 module.exports = {
+    api: {
+        server: {
+            protocol: 'http:',
+            pathname: '/v2'
+        },
+        client: {
+            protocol: 'https:',
+            pathname: '/api/v2'
+        },
+        endpoints: {
+            userPermissions: {
+                pathname: '/user/permissions'
+            }
+        }
+    },
+
     csp: {
         directives: {
             defaultSrc: ["'none'"],
@@ -58,6 +74,18 @@ module.exports = {
 
     notify: {
         telegram: 'https://telegram.me/YaNotifyBot'
+    },
+
+    pass: {
+        protocol: 'https',
+        host: 'pass.yandex.',
+        pathname: 'auth/update'
+    },
+
+    passport: {
+        protocol: 'https',
+        host: 'passport.yandex.',
+        pathname: 'auth'
     },
 
     startYear: '2019'

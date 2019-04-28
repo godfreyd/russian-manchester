@@ -1,0 +1,35 @@
+.user-page
+{
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+
+    &__content
+    {
+        display: grid;
+
+        grid-template-columns: 620px 260px 280px;
+        grid-template-areas: 'user user-history user-products';
+        grid-column-gap: 50px;
+
+        margin: 45px 0 0;
+    }
+
+    &__center
+    {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    & .loading-list
+    {
+        max-height: calc(100vh - 147px);
+    }
+
+    & .my-products__title
+    {
+        line-height: 30px;
+    }
+}

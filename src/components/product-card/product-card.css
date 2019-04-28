@@ -1,0 +1,161 @@
+.product-card
+{
+    font-size: 14px;
+
+    border-radius: 6px;
+
+    &__content
+    {
+        display: grid;
+        grid-template-columns: 278px 566px 277px;
+    }
+
+    &__close
+    {
+        position: absolute;
+        top: 22px;
+        right: 22px;
+    }
+
+    &__info
+    {
+        padding: 40px 32px 48px 56px;
+    }
+
+    &__left
+    {
+        position: relative;
+
+        padding: 32px 37px 48px 38px;
+    }
+
+    &__left,
+    &__preview,
+    &__buttons
+    {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__preview
+    {
+        position: relative;
+
+        align-items: center;
+
+        margin-bottom: 63px;
+    }
+
+    &__title
+    {
+        overflow: hidden;
+
+        width: 100%;
+
+        margin: 0 0 38px;
+
+        white-space: nowrap;
+
+        text-overflow: ellipsis;
+    }
+
+    &__pin-code
+    {
+        margin-bottom: 16px;
+    }
+
+    &__buttons
+    {
+        justify-content: space-between;
+
+        flex-grow: 1;
+
+        & .product-buttons
+        {
+            margin-bottom: 12px;
+
+            &:last-child
+            {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &__left,
+    &__info
+    {
+        border-right: 1px solid #ebeff1;
+    }
+
+    &__right
+    {
+        position: relative;
+
+        padding: 37px 0 0;
+
+        background-color: #f6f7f9;
+
+        & .loading-list
+        {
+            position: absolute;
+
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+
+            height: 100%;
+        }
+    }
+
+    &__history,
+    &__subscription
+    {
+        padding: 0 28px;
+    }
+
+    &__history
+    {
+        height: calc(100% - 190px);
+
+        &_full
+        {
+            height: 100%;
+        }
+    }
+
+    &__subscription
+    {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        height: 159px;
+
+        padding-top: 29px;
+
+        border-top: 2px solid #ebeff1;
+
+        transition: bottom .3s ease;
+
+        &_hidden
+        {
+            bottom: -190px;
+        }
+    }
+
+    &__list-wrapper
+    {
+        position: relative;
+
+        height: 100%;
+    }
+}
+
+.modal_type_product-card .modal__content
+{
+    overflow: hidden;
+
+    border-radius: 6px;
+}

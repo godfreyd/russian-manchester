@@ -1,0 +1,37 @@
+.footer
+{
+    position: fixed;
+    z-index: 5;
+    bottom: 0;
+
+    width: 100%;
+    min-width: 1260px;
+    height: 40px;
+
+    font-size: 14px;
+    line-height: 20px;
+
+    border-top: 1px solid #e1e6e8;
+    background: #fff;
+
+    box-shadow: 0 0 5px 0 rgba(225, 230, 232, .5), inset 0 -1px 0 0 #e1e6e8;
+
+    &__content
+    {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        margin: 10px 150px;
+    }
+
+    &__left .link
+    {
+        margin-right: 30px;
+    }
+
+    &__copyright
+    {
+        padding-left: 40px;
+    }
+}

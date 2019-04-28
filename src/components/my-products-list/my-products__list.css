@@ -1,0 +1,46 @@
+.my-products-list
+{
+    &__tip
+    {
+        width: 220px;
+        margin: 10px 0;
+        padding-top: 10px;
+
+        font-size: 14px;
+        line-height: 20px;
+
+        border-top: 1px solid #d8d8d8;
+    }
+}
+
+.list-enter
+{
+    opacity: 0;
+
+    transform: translateY(-100%);
+}
+
+.list-enter.list-enter-active
+{
+
+    opacity: 1;
+
+    transition: .4s;
+    transform: translateY(0);
+}
+
+.list-leave
+{
+
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+.list-leave.list-leave-active
+{
+    opacity: 0;
+
+    transition: .5s;
+    transform: translateY(-100%);
+}

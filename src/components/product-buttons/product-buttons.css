@@ -1,0 +1,16 @@
+.product-buttons
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &__item
+    {
+        margin-bottom: 12px;
+
+        &:last-child
+        {
+            margin-bottom: 0;
+        }
+    }
+}

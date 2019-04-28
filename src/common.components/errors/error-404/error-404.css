@@ -1,0 +1,41 @@
+.error-404
+{
+    display: grid;
+    grid-template-columns: 370px 340px;
+
+    width: 100%;
+
+    align-items: center;
+    justify-content: center;
+
+    &__title
+    {
+        margin-bottom: 13px;
+
+        letter-spacing: .34px;
+
+        font: 34px 'Yandex Sans Display', sans-serif;
+        font-weight: 600;
+        line-height: 38px;
+    }
+
+    &__tip
+    {
+        font-size: 14px;
+        line-height: 22px;
+
+        color: #999;
+    }
+
+    &__content
+    {
+        z-index: 2;
+
+        width: 302px;
+    }
+
+    &__image
+    {
+        margin-top: 70px;
+    }
+}

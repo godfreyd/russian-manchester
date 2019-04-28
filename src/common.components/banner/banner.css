@@ -1,0 +1,39 @@
+.banner
+{
+    position: relative;
+
+    box-sizing: border-box;
+
+    width: 180px;
+    padding: 20px;
+
+    border: 1px solid #ebeff1;
+
+    border-radius: 3px;
+
+    background-color: #fff;
+
+    &__close
+    {
+        position: absolute;
+
+        top: 18px;
+        right: 18px;
+
+        & .icon
+        {
+            width: 14px;
+            height: 14px;
+        }
+    }
+
+    &__title
+    {
+        width: 114px;
+        margin: 0;
+
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 22px;
+    }
+}

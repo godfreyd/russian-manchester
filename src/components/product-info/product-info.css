@@ -1,0 +1,19 @@
+.product-form
+{
+    &__group_type_note .product-info-row__value
+    {
+        white-space: normal;
+    }
+
+    &__note
+    {
+        height: 104px;
+
+        &-text
+        {
+            word-wrap: break-word;
+
+            line-height: 26px;
+        }
+    }
+}

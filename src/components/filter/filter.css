@@ -46,30 +46,30 @@
             font-size: 12px;
         }
 
-        & .y-input
+        & .input
         {
             box-sizing: border-box;
         }
 
-        & .y-input__control
+        & .input__control
         {
             padding-left: 15px;
         }
 
-        & .y-input_theme_normal .y-input__box::before
+        & .input_theme_normal .input__box::before
         {
             border-color: rgba(75, 75, 75, .15);
         }
     }
 
-    & .y-checkbox
+    & .checkbox
     {
         display: block;
 
         margin-top: 6px;
     }
 
-    & .y-checkbox__text
+    & .checkbox__text
     {
 
         text-align: right;
@@ -79,22 +79,22 @@
         opacity: .5;
     }
 
-    & .y-checkbox_theme_normal .y-checkbox__view
+    & .checkbox_theme_normal .checkbox__view
     {
         border-width: 2px;
     }
 
-    & .y-radio_theme_normal .y-radio__view
+    & .radio_theme_normal .radio__view
     {
         border-width: 2px;
     }
 
-    & .y-checkbox_theme_normal.y-checkbox_checked .y-checkbox__view
+    & .checkbox_theme_normal.checkbox_checked .checkbox__view
     {
         border-width: 1px
     }
 
-    & .y-radio__text
+    & .radio__text
     {
         font-size: 14px;
         font-weight: normal;

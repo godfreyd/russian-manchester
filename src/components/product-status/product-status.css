@@ -1,0 +1,7 @@
+.product-status
+{
+    &__indent
+    {
+        margin: 0 5px;
+    }
+}

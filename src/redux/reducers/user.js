@@ -17,8 +17,8 @@ export default handleActions({
     [EVENT_USER_INFO_FAIL]: fetchUserInfoFail,
     [EVENT_USER_HISTORY]: fetchUserHistory,
     [EVENT_USER_HISTORY_SUCCESS]: fetchUserHistorySuccess,
-    [EVENT_USER_PRODUCTS]: fetchUserDevices,
-    [EVENT_USER_PRODUCTS_SUCCESS]: fetchUserDevicesSuccess,
+    [EVENT_USER_PRODUCTS]: fetchUserProducts,
+    [EVENT_USER_PRODUCTS_SUCCESS]: fetchUserProductsSuccess,
     [EVENT_USER_SUBSCRIPTIONS_SUCCESS]: fetchUserSubscriptionsSuccess
 }, {
     info: {},
@@ -36,7 +36,7 @@ function fetchUserInfo(state) {
     };
 }
 
-function fetchUserDevices(state) {
+function fetchUserProducts(state) {
     return {
         ...state,
         products: []
@@ -60,7 +60,7 @@ function fetchUserInfoFail(state, action) {
     };
 }
 
-function fetchUserDevicesSuccess(state, action) {
+function fetchUserProductsSuccess(state, action) {
     return {
         ...state,
         products: action.payload

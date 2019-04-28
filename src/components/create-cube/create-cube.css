@@ -1,0 +1,24 @@
+.create-cube
+{
+    &__close
+    {
+        position: absolute;
+
+        top: 18px;
+        right: 18px;
+    }
+
+    &__button
+    {
+        width: 180px;
+
+        margin-top: 32px;
+    }
+}
+
+.modal_type_create-cube .modal__content
+{
+    padding: 20px 30px;
+
+    border-radius: 5px;
+}

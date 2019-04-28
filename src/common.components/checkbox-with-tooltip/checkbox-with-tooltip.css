@@ -1,0 +1,11 @@
+.checkbox-with-tooltip
+{
+    display: inline-block;
+
+    &__content
+    {
+        max-width: 40vw;
+
+        padding: 25px;
+    }
+}

@@ -1,0 +1,37 @@
+.user-info
+{
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-column-gap: 40px;
+
+    &__name
+    {
+        letter-spacing: .27px;
+
+        font: 27px 'Yandex Sans Text Web', sans-serif;
+        font-weight: 600;
+        line-height: 30px;
+    }
+
+    &__contacts
+    {
+        margin-top: 20px;
+    }
+
+    &__contact-row
+    {
+        display: grid;
+        grid-template-columns: 100px 220px;
+        grid-column-gap: 40px;
+
+        margin-bottom: 10px;
+
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    &__key
+    {
+        color: #808080
+    }
+}

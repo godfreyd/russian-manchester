@@ -1,0 +1,56 @@
+.user-products
+{
+    &__product
+    {
+        width: 220px;
+        margin-bottom: 25px;
+
+        & .link
+        {
+
+            margin-left: 10px;
+
+            font-size: 14px;
+        }
+    }
+
+    &__product-status
+    {
+        display: flex;
+        align-items: flex-start;
+    }
+
+    &__product-title
+    {
+
+        overflow: hidden;
+
+        max-width: 216px;
+        margin: 5px 0 2px;
+
+        white-space: nowrap;
+        text-overflow: ellipsis;
+
+        font-size: 18px;
+        line-height: 24px;
+    }
+
+    &__product-description
+    {
+        cursor: pointer;
+
+        transition: opacity .15s ease-in-out;
+
+        &:hover
+        {
+            opacity: .6;
+        }
+    }
+
+    &__product-info
+    {
+        font-size: 14px;
+
+        color: #808080
+    }
+}

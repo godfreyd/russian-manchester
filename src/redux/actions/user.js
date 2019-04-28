@@ -20,9 +20,9 @@ export const EVENT_USER_PRODUCTS = 'EVENT_USER_PRODUCTS';
 export const EVENT_USER_PRODUCTS_SUCCESS = 'EVENT_USER_PRODUCTS_SUCCESS';
 export const EVENT_USER_PRODUCTS_FAIL = 'EVENT_USER_PRODUCTS_FAIL';
 
-export const fetchUserDevices = createAction(EVENT_USER_PRODUCTS);
-export const fetchUserDevicesSuccess = createAction(EVENT_USER_PRODUCTS_SUCCESS);
-export const fetchUserDevicesFail = createAction(EVENT_USER_PRODUCTS_FAIL);
+export const fetchUserProducts = createAction(EVENT_USER_PRODUCTS);
+export const fetchUserProductsSuccess = createAction(EVENT_USER_PRODUCTS_SUCCESS);
+export const fetchUserProductsFail = createAction(EVENT_USER_PRODUCTS_FAIL);
 
 export const EVENT_USER_SUBSCRIPTIONS = 'EVENT_USER_SUBSCRIPTIONS';
 export const EVENT_USER_SUBSCRIPTIONS_SUCCESS = 'EVENT_USER_SUBSCRIPTIONS_SUCCESS';

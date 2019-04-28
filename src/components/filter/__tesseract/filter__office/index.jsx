@@ -3,7 +3,7 @@ import propTypes from 'prop-types';
 import { cn } from '@bem-react/classname';
 import find from 'lodash/find';
 
-import YCheckbox from 'y-components/dist/y-checkbox';
+import Checkbox from '../../../../common.components/checkbox';
 
 import CheckboxWithTooltip from '../../../../common.components/checkbox-with-tooltip';
 
@@ -119,13 +119,13 @@ export default class OfficeFilter extends React.Component {
 
                 <div className={classNames('title')}>{officeName}</div>
                 {cubes.length > 1 &&
-                    <YCheckbox
+                    <Checkbox
                         name="all"
                         checked={all}
                         onChange={this._handleAllCubesChange}
                     >
                         {i18n('filter-all-cubes')}
-                    </YCheckbox>
+                    </Checkbox>
                 }
                 {cubes.map(cube => {
                     const { isAdmin, responsible } = globalConfig.userPermissions;

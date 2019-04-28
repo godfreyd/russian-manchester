@@ -1,0 +1,16 @@
+.user-subscriptions
+{
+    &__title
+    {
+        display: inline-block;
+
+        margin-right: 7px;
+        margin-bottom: 25px;
+
+        letter-spacing: .2px;
+
+        font: 27px 'Yandex Sans Display', sans-serif;
+        font-weight: 600;
+        line-height: 30px;
+    }
+}

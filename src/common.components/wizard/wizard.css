@@ -1,0 +1,277 @@
+.wizard
+{
+    display: flex;
+    flex-direction: column;
+
+    width: 600px;
+    height: 470px;
+
+    text-align: center;
+
+    &__step-content
+    {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+
+        height: 360px;
+    }
+
+    &__show
+    {
+        animation: video-in .5s ease-in-out;
+    }
+
+    &__hide
+    {
+        animation: video-out .5s ease-in-out;
+    }
+
+    &__show-back
+    {
+        animation: video-in-reverse .5s ease-in-out;
+    }
+
+    &__hide-back
+    {
+        animation: video-out-reverse .5s ease-in-out;
+    }
+
+    &__video-wrap
+    {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        height: 300px;
+    }
+
+    &__title
+    {
+
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+
+        padding: 0 10px;
+
+        letter-spacing: .25px;
+
+        font-family: 'Yandex Sans Text Web', sans-serif;
+        font-size: 25px;
+        font-weight: 600;
+        line-height: 30px;
+    }
+
+    &__description
+    {
+
+        margin-top: 10px;
+
+        font-size: 18px;
+        line-height: 22px;
+
+        opacity: .5;
+    }
+
+    &__btn-group-wrap
+    {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 600px;
+    }
+
+    &__btn-group
+    {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 130px;
+        height: 100px;
+    }
+
+    &__main-btn
+    {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 50px;
+        height: 50px;
+
+        margin: 10px;
+
+        border-radius: 30px;
+
+        background: #007aff;
+
+        transition: transform .1s ease-in-out;
+
+        backface-visibility: hidden;
+
+        &:hover
+        {
+            cursor: pointer;
+
+            background: #006fe6;
+
+            transition: transform .3s ease-in-out, background .3s ease-in-out;
+            transform: scale(.92);
+        }
+    }
+
+    &__main-btn-arrow
+    {
+        width: 20px;
+        height: 18px;
+
+        background: url('../icons/arrow.svg') 50% 50% no-repeat;
+    }
+
+    &__main-btn-check
+    {
+        width: 23px;
+        height: 20px;
+
+        background: url('../icons/check.svg') 50% 50% no-repeat;
+    }
+
+    &__dot-btn-wrap
+    {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 15px;
+        height: 50px;
+        margin: 2px;
+
+        &:hover
+        {
+            cursor: pointer;
+        }
+    }
+
+    &__dot-btn
+    {
+        display: inline-block;
+
+        width: 10px;
+        height: 10px;
+
+        border-radius: 5px;
+
+        background: #ccc;
+    }
+
+    &__dot-btn-wrap:hover &__dot-btn
+    {
+        background: #aaa;
+    }
+
+    &__close
+    {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+
+        width: 14px;
+        height: 14px;
+
+        opacity: .3;
+
+        background: url('../icons/close.svg') 50% 50% no-repeat;
+
+        &:hover
+        {
+            cursor: pointer;
+
+            opacity: .6;
+        }
+    }
+}
+
+.modal_wizard .modal__content
+{
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .15)
+}
+
+@keyframes video-in
+{
+    from
+    {
+
+        opacity: 0;
+
+        transform: translateX(10%);
+    }
+
+    to
+    {
+
+        opacity: 1;
+
+        transform: translateX(0%);
+    }
+}
+
+@keyframes video-out
+{
+    from
+    {
+
+        opacity: 1;
+
+        transform: translateX(0%);
+    }
+
+    to
+    {
+
+        opacity: 0;
+
+        transform: translateX(-10%);
+    }
+}
+
+@keyframes video-in-reverse
+{
+    from
+    {
+
+        opacity: 0;
+
+        transform: translateX(-10%);
+    }
+
+    to
+    {
+
+        opacity: 1;
+
+        transform: translateX(0%);
+    }
+}
+
+@keyframes video-out-reverse
+{
+    from
+    {
+
+        opacity: 1;
+
+        transform: translateX(0%);
+    }
+
+    to
+    {
+
+        opacity: 0;
+
+        transform: translateX(10%);
+    }
+}

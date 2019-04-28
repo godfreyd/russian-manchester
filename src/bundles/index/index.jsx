@@ -7,13 +7,17 @@ import Helmet from 'react-helmet';
 import { configureStore } from '../../redux/store';
 import { getInitialState } from '../../redux/state';
 
-import './index.css';
+import MetrikaCounter from '../../common.components/metrika-counter';
 
+import UserPage from '../../pages/user';
 import MainPage from '../../pages/main';
+import ErrorPage from '../../pages/error';
+
+import './index.css';
 
 export default class App extends Component {
     render() {
-        const { lang, title } = this.props.appData;
+        const { lang, title, metrikaId, env } = this.props.appData;
 
         return (
             <div className="app">
@@ -26,7 +30,20 @@ export default class App extends Component {
                 <Switch>
                     <Route exact path="/" component={MainPage} />
                     <Route exact path="/search" component={MainPage} />
+                    <Route exact path="/user/:login" render={props => <UserPage key={props.match.params.login} login={props.match.params.login} {...props} />} />
+                    <Route component={ErrorPage} />
                 </Switch>
+                {env === 'production' &&
+                    <MetrikaCounter
+                        metrika={{
+                            id: metrikaId,
+                            clickmap: true,
+                            trackLinks: true,
+                            webvisor: true,
+                            accurateTrackBounce: true
+                        }}
+                    />
+                }
             </div>
         );
     }

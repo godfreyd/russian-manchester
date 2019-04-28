@@ -1,0 +1,25 @@
+.user-products
+{
+    margin: 0 0 0 20px;
+
+    text-align: left;
+
+    grid-area: user-products;
+
+    &__title
+    {
+
+        margin-bottom: 25px;
+
+        letter-spacing: .2px;
+
+        font: 27px 'Yandex Sans Display', sans-serif;
+        font-weight: 600;
+        line-height: 38px;
+    }
+
+    & .user-subscriptions
+    {
+        margin-top: 42px;
+    }
+}

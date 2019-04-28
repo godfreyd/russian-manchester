@@ -73,8 +73,6 @@ export default async function ssr(bundleName, location, appData, tanker) {
         // Create empty react-router context
         const routerContext = {};
 
-        console.log('мы же не продакшн');
-
         // Init app
         const app = initSSR(bundle, { location, routerContext, appState, appData });
 
@@ -86,7 +84,6 @@ export default async function ssr(bundleName, location, appData, tanker) {
 
     // Get helmet content
     const helmet = Helmet.renderStatic();
-
 
     result.html = renderDocument(helmet, { appHtml, appState, appData, tanker });
 

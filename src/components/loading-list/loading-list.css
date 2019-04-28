@@ -67,7 +67,7 @@
 
         transition: bottom .15s linear, box-shadow .05s linear .15s;
 
-        & .y-spin
+        & .spin
         {
             display: inline-block;
         }

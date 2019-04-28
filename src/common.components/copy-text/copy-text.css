@@ -1,0 +1,34 @@
+.copy-text
+{
+    &__name
+    {
+        margin: 0;
+    }
+
+    &__copy.link
+    {
+        display: none;
+
+        color: #2f99e5;
+
+        &:hover
+        {
+            cursor: pointer;
+
+            color: #d00;
+        }
+    }
+
+    &:hover &
+    {
+        &__name
+        {
+            display: none;
+        }
+
+        &__copy
+        {
+            display: inline;
+        }
+    }
+}

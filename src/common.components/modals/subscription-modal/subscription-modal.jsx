@@ -3,7 +3,7 @@ import propTypes from 'prop-types';
 import { cn } from '@bem-react/classname';
 
 import DialogModal from '../dialog-modal';
-import OldCheckbox from '../../old-checkbox';
+import Checkbox from '../../checkbox';
 
 import i18n from '../../../components/i18n';
 
@@ -58,9 +58,9 @@ export default class SubscriptionModal extends React.Component {
                     </div>
 
                     {product &&
-                        <OldCheckbox checked={checked} onChange={this.onCheckboxClick}>
+                        <Checkbox checked={checked} onChange={this.onCheckboxClick}>
                             {i18n('do-not-show-again')}
-                        </OldCheckbox>
+                        </Checkbox>
                     }
                 </div>
             </DialogModal>

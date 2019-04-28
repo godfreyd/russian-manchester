@@ -1,0 +1,80 @@
+.pin-code
+{
+    &,
+    &__top
+    {
+        margin: 0 0 12px;
+    }
+
+    &__top
+    {
+        height: 32px;
+    }
+
+    &__top,
+    &__text,
+    &__controls,
+    &__bottom
+    {
+        display: flex;
+
+        justify-content: space-between;
+    }
+
+    &__label
+    {
+        flex-shrink: 0;
+
+        margin-right: 16px;
+
+        font-size: 14px;
+        line-height: 32px;
+
+        opacity: .5;
+    }
+
+    &__input
+    {
+        max-width: 103px;
+    }
+
+    &__label,
+    &__input
+    {
+        overflow: hidden;
+
+        text-overflow: ellipsis;
+
+        line-height: 23px;
+    }
+
+    &__controls
+    {
+        margin-left: 8px;
+    }
+
+    &__text,
+    &__controls
+    {
+        align-items: center;
+    }
+
+    &__button:hover
+    {
+        cursor: pointer;
+
+        opacity: .8;
+    }
+
+    &__button + &__button
+    {
+        margin-left: 6px;
+    }
+
+    &__tooltip
+    {
+        width: 300px;
+
+        padding: 14px 18px;
+    }
+}

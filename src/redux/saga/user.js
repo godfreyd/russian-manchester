@@ -23,13 +23,13 @@ function *fetchUserHistoryAsync({ payload }) {
     }
 }
 
-function *fetchUserDevicesAsync({ payload }) {
+function *fetchUserProductsAsync({ payload }) {
     try {
         const data = yield call(API.user.products, payload);
 
-        yield put(types.fetchUserDevicesSuccess(data));
+        yield put(types.fetchUserProductsSuccess(data));
     } catch (error) {
-        yield put(types.fetchUserDevicesFail(error.message));
+        yield put(types.fetchUserProductsFail(error.message));
     }
 }
 
@@ -47,7 +47,7 @@ export default function *watchUserAsync() {
     yield [
         takeEvery(types.EVENT_USER_INFO, fetchUserInfoAsync),
         takeEvery(types.EVENT_USER_HISTORY, fetchUserHistoryAsync),
-        takeEvery(types.EVENT_USER_PRODUCTS, fetchUserDevicesAsync),
+        takeEvery(types.EVENT_USER_PRODUCTS, fetchUserProductsAsync),
         takeEvery(types.EVENT_USER_SUBSCRIPTIONS, fetchUserSubscriptionsAsync)
     ];
 }

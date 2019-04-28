@@ -1,0 +1,31 @@
+.notifications-banner
+{
+    &__text
+    {
+        margin: 10px 0;
+
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    &__button
+    {
+        & .icon,
+        & .button2__text
+        {
+            vertical-align: middle;
+        }
+
+        & .icon
+        {
+            margin: -2px 6px 0 0;
+        }
+
+        &&& .button2__text
+        {
+            display: inline-block;
+
+            line-height: 37px;
+        }
+    }
+}
