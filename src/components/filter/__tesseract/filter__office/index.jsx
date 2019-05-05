@@ -1,6 +1,6 @@
 import React from 'react';
 import propTypes from 'prop-types';
-import { cn } from '@bem-react/classname';
+import { withNaming } from '@bem-react/classname';
 import find from 'lodash/find';
 
 import Checkbox from '../../../../common.components/checkbox';
@@ -14,6 +14,7 @@ import i18n from '../../../i18n';
 
 import './index.css';
 
+const cn = withNaming({ e: '__', m: '_', v: '_' });
 const classNames = cn('filter');
 
 export default class OfficeFilter extends React.Component {

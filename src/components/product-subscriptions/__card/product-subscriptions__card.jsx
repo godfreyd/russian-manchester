@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { cn } from '@bem-react/classname';
+import { withNaming } from '@bem-react/classname';
 
 import UserLogin from '../../../common.components/user-login';
 import UserIcon from '../../../common.components/user-icon';
@@ -9,6 +9,7 @@ import i18n from '../../i18n';
 
 import './product-subscriptions__card.css';
 
+const cn = withNaming({ e: '__', m: '_', v: '_' });
 const classNames = cn('product-subscriptions');
 const USER_ICON_SIZE = 36;
 

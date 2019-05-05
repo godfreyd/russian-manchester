@@ -1,5 +1,5 @@
 import React from 'react';
-import { cn } from '@bem-react/classname';
+import { withNaming } from '@bem-react/classname';
 import find from 'lodash/find';
 import get from 'lodash/get';
 import isEmpty from 'lodash/isEmpty';
@@ -28,6 +28,7 @@ import i18n from '../i18n';
 
 import './product-card.css';
 
+const cn = withNaming({ e: '__', m: '_', v: '_' });
 const classNames = cn('product-card');
 
 export default class ProductCard extends React.Component {

@@ -1,6 +1,6 @@
 import React from 'react';
 import propTypes from 'prop-types';
-import { cn } from '@bem-react/classname';
+import { withNaming } from '@bem-react/classname';
 import get from 'lodash/get';
 import groupBy from 'lodash/groupBy';
 
@@ -10,6 +10,7 @@ import Slot from '../slot';
 
 import './cube-scheme.css';
 
+const cn = withNaming({ e: '__', m: '_', v: '_' });
 const classNames = cn('cube-scheme');
 
 export default class CubeScheme extends React.Component {

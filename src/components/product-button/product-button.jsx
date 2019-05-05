@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { cn } from '@bem-react/classname';
+import { withNaming } from '@bem-react/classname';
 import omit from 'lodash/omit';
 
 import Button from '../../common.components/button';
 
 import i18n from '../i18n';
 
+const cn = withNaming({ e: '__', m: '_', v: '_' });
 const classNames = cn('product-button');
 
 const ownProps = ['i18nKey'];

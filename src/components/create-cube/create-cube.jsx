@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { cn } from '@bem-react/classname';
+import { withNaming } from '@bem-react/classname';
 import omit from 'lodash/omit';
 
 import slug from '../../lib/slug';
@@ -15,6 +15,7 @@ import i18n from '../i18n';
 
 import './create-cube.css';
 
+const cn = withNaming({ e: '__', m: '_', v: '_' });
 const classNames = cn('create-cube');
 
 export default class CreateCube extends React.Component {

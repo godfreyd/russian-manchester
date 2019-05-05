@@ -1,5 +1,5 @@
 import React from 'react';
-import { cn } from '@bem-react/classname';
+import { withNaming } from '@bem-react/classname';
 import { withRouter } from 'react-router-dom';
 import { compose } from 'redux';
 import flatten from 'lodash/flatten';
@@ -16,6 +16,7 @@ import UserProductsStub from '../../components/stubs/user-products-stub';
 
 import './main-page.css';
 
+const cn = withNaming({ e: '__', m: '_', v: '_' });
 const classNames = cn('main-page');
 const HAS_SEARCH = true;
 

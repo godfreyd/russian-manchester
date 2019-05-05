@@ -1,6 +1,6 @@
 import React from 'react';
 import propTypes from 'prop-types';
-import { cn } from '@bem-react/classname';
+import { withNaming } from '@bem-react/classname';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 import Link from '../../../common.components/link';
@@ -12,6 +12,7 @@ import CubeStatus from '../cube-status';
 
 import i18n from '../../i18n';
 
+const cn = withNaming({ e: '__', m: '_', v: '_' });
 const classNames = cn('cube-tooltip');
 
 import './cube-tooltip.css';

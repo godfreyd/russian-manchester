@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { cn } from '@bem-react/classname';
+import { withNaming } from '@bem-react/classname';
 
 import { getHistoryDate, parseSlot } from '../../../lib/helpers';
 
@@ -14,6 +14,7 @@ import i18n from '../../i18n';
 
 import './loading-list__item.css';
 
+const cn = withNaming({ e: '__', m: '_', v: '_' });
 const classNames = cn('loading-list');
 
 const USER_ICON_SIZE = 36;

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { cn } from '@bem-react/classname';
+import { withNaming } from '@bem-react/classname';
 
 import CopyText from '../../common.components/copy-text';
 import Input from '../../common.components/input';
@@ -12,6 +12,7 @@ import i18n from '../i18n';
 
 import './mutable-product-info.css';
 
+const cn = withNaming({ e: '__', m: '_', v: '_' });
 const classNames = cn('mutable-product-info');
 
 /**

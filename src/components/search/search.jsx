@@ -1,6 +1,6 @@
 import React from 'react';
 import propTypes from 'prop-types';
-import { cn } from '@bem-react/classname';
+import { withNaming } from '@bem-react/classname';
 import { withRouter } from 'react-router-dom';
 import { debounce } from 'throttle-debounce';
 import get from 'lodash/get';
@@ -14,6 +14,7 @@ import i18n from '../i18n';
 
 import './search.css';
 
+const cn = withNaming({ e: '__', m: '_', v: '_' });
 const classNames = cn('search');
 
 class Search extends React.Component {

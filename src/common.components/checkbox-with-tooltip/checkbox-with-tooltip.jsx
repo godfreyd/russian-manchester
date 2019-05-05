@@ -1,5 +1,5 @@
 import React from 'react';
-import { cn } from '@bem-react/classname';
+import { withNaming } from '@bem-react/classname';
 import PropTypes from 'prop-types';
 import ReactHoverObserver from 'react-hover-observer';
 
@@ -9,6 +9,7 @@ import Popup from '../popup';
 
 import './checkbox-with-tooltip.css';
 
+const cn = withNaming({ e: '__', m: '_', v: '_' });
 const classNames = cn('checkbox-with-tooltip');
 
 export default class CheckboxWithTooltip extends React.Component {

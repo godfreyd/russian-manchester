@@ -1,12 +1,13 @@
 import React from 'react';
 import propTypes from 'prop-types';
-import { cn } from '@bem-react/classname';
+import { withNaming } from '@bem-react/classname';
 
 import Input from '../input';
 import Popup from '../popup';
 
 import './suggest.css';
 
+const cn = withNaming({ e: '__', m: '_', v: '_' });
 const classNames = cn('suggest');
 
 export default class Suggest extends React.Component {

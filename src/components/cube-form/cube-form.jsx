@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { cn } from '@bem-react/classname';
+import { withNaming } from '@bem-react/classname';
 import find from 'lodash/find';
 
 import Button from '../../common.components/button';
@@ -14,6 +14,7 @@ import i18n from '../i18n';
 
 import './cube-form.css';
 
+const cn = withNaming({ e: '__', m: '_', v: '_' });
 const classNames = cn('cube-form');
 
 export default class CubeForm extends React.Component {

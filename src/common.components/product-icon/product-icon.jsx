@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { cn } from '@bem-react/classname';
+import { withNaming } from '@bem-react/classname';
 
 import Icon from '../icon';
 
+const cn = withNaming({ e: '__', m: '_', v: '_' });
 const classNames = cn('product-icon');
 
 const ProductIcon = ({ photo, size = 'orig', type }) => {

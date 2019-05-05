@@ -1,6 +1,6 @@
 import React from 'react';
 import propTypes from 'prop-types';
-import { cn } from '@bem-react/classname';
+import { withNaming } from '@bem-react/classname';
 import get from 'lodash/get';
 
 import Input from '../../../common.components/input';
@@ -9,6 +9,7 @@ import i18n from '../../i18n';
 
 import './filter__diagonal.css';
 
+const cn = withNaming({ e: '__', m: '_', v: '_' });
 const classNames = cn('filter');
 
 export default class FilterDiagonal extends React.Component {

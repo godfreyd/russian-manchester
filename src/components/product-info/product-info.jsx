@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { cn } from '@bem-react/classname';
+import { withNaming } from '@bem-react/classname';
 
 import 'lego-on-react/src/components/textarea/textarea.css';
 
@@ -17,6 +17,7 @@ import i18n from '../i18n';
 
 import './product-info.css';
 
+const cn = withNaming({ e: '__', m: '_', v: '_' });
 const classNames = cn('product-form');
 
 const ProductInfo = props => {

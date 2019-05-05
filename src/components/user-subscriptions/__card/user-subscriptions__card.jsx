@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { cn } from '@bem-react/classname';
+import { withNaming } from '@bem-react/classname';
 import { withRouter } from 'react-router-dom';
 import get from 'lodash/get';
 
@@ -10,6 +10,7 @@ import i18n from '../../i18n';
 
 import './user-subscriptions__card.css';
 
+const cn = withNaming({ e: '__', m: '_', v: '_' });
 const classNames = cn('user-subscriptions');
 
 const UserSubscriptionsCard = ({ position, product, tesseract, location, history, notified, productLocation }) => {

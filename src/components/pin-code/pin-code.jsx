@@ -1,5 +1,5 @@
 import React from 'react';
-import { cn } from '@bem-react/classname';
+import { withNaming } from '@bem-react/classname';
 import PropTypes from 'prop-types';
 
 import EllipsisString from '../../common.components/ellipsis-string';
@@ -12,6 +12,7 @@ import i18n from '../i18n';
 
 import './pin-code.css';
 
+const cn = withNaming({ e: '__', m: '_', v: '_' });
 const classNames = cn('pin-code');
 
 class PinCode extends React.Component {

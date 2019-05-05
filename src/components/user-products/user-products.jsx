@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { cn } from '@bem-react/classname';
+import { withNaming } from '@bem-react/classname';
 
 import CreateCube from '../create-cube';
 import MyProductsList from '../my-products-list';
@@ -12,6 +12,7 @@ import i18n from '../i18n';
 
 import './user-products.css';
 
+const cn = withNaming({ e: '__', m: '_', v: '_' });
 const classNames = cn('user-products');
 
 export default class UserProducts extends React.PureComponent {

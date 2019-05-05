@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { cn } from '@bem-react/classname';
+import { withNaming } from '@bem-react/classname';
 
 import Link from '../link';
 
 import './user-icon.css';
 
+const cn = withNaming({ e: '__', m: '_', v: '_' });
 const classNames = cn('user-icon');
 
 const UserIcon = ({ login, size = 32, type = 'default' }) => {

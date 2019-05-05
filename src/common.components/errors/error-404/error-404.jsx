@@ -1,5 +1,5 @@
 import React from 'react';
-import { cn } from '@bem-react/classname';
+import { withNaming } from '@bem-react/classname';
 
 import Icon from '../../icon';
 import Link from '../../link';
@@ -8,6 +8,7 @@ import i18n from '../../../components/i18n';
 
 import './error-404.css';
 
+const cn = withNaming({ e: '__', m: '_', v: '_' });
 const classNames = cn('error-404');
 
 const Error404 = () => (

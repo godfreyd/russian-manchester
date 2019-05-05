@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { cn } from '@bem-react/classname';
+import { withNaming } from '@bem-react/classname';
 
 import TicketLink from '../../common.components/ticket-link';
 import UserLogin from '../../common.components/user-login';
@@ -11,6 +11,7 @@ import i18n from '../i18n';
 
 import './product-status.css';
 
+const cn = withNaming({ e: '__', m: '_', v: '_' });
 const classNames = cn('product-status');
 
 export default class ProductStatus extends React.Component {

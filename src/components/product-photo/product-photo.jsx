@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { cn } from '@bem-react/classname';
+import { withNaming } from '@bem-react/classname';
 import i18n from '../i18n';
 
 import Icon from '../../common.components/icon';
 
 import './product-photo.css';
 
+const cn = withNaming({ e: '__', m: '_', v: '_' });
 const classNames = cn('product-photo');
 
 const ProductPhoto = props => {

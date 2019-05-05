@@ -1,11 +1,12 @@
 import React from 'react';
-import { cn } from '@bem-react/classname';
+import { withNaming } from '@bem-react/classname';
 import PropTypes from 'prop-types';
 
 import EllipsisString from '../../common.components/ellipsis-string';
 
 import './product-info-row.css';
 
+const cn = withNaming({ e: '__', m: '_', v: '_' });
 const classNames = cn('product-info-row');
 
 const ProductInfoRow = props => {

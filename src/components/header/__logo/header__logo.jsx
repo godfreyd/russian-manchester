@@ -1,10 +1,11 @@
 import React from 'react';
-import { cn } from '@bem-react/classname';
+import { withNaming } from '@bem-react/classname';
 import Icon from '../../../common.components/icon';
 import Link from '../../../common.components/link';
 
 import './header__logo.css';
 
+const cn = withNaming({ e: '__', m: '_', v: '_' });
 const classNames = cn('header');
 
 const HeaderLogo = () => (

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { cn } from '@bem-react/classname';
+import { withNaming } from '@bem-react/classname';
 
 import pageTemplate from '../../decorators/page-template';
 
@@ -16,6 +16,7 @@ import i18n from '../../components/i18n';
 
 import './user-page.css';
 
+const cn = withNaming({ e: '__', m: '_', v: '_' });
 const classNames = cn('user-page');
 
 @pageTemplate()

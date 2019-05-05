@@ -1,10 +1,11 @@
 import React from 'react';
-import { cn } from '@bem-react/classname';
+import { withNaming } from '@bem-react/classname';
 
 import Rect from '../rect';
 
 import './filter-stub.css';
 
+const cn = withNaming({ e: '__', m: '_', v: '_' });
 const classNames = cn('filter-stub');
 
 /**

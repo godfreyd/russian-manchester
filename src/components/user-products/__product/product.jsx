@@ -1,5 +1,5 @@
 import React from 'react';
-import { cn } from '@bem-react/classname';
+import { withNaming } from '@bem-react/classname';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import get from 'lodash/get';
@@ -14,6 +14,7 @@ import i18n from '../../i18n';
 
 import './user-products__product.css';
 
+const cn = withNaming({ e: '__', m: '_', v: '_' });
 const classNames = cn('user-products');
 
 class Product extends React.PureComponent {

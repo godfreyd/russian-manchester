@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { cn } from '@bem-react/classname';
+import { withNaming } from '@bem-react/classname';
 import flatten from 'lodash/flatten';
 
 import Cube from '../cube';
@@ -11,6 +11,7 @@ import i18n from '../i18n';
 
 import './products.css';
 
+const cn = withNaming({ e: '__', m: '_', v: '_' });
 const classNames = cn('products');
 
 export default class Products extends React.Component {

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { cn } from '@bem-react/classname';
+import { withNaming } from '@bem-react/classname';
 
 import Icon from '../../common.components/icon';
 import SubscriptionModal from '../../common.components/modals/subscription-modal';
@@ -11,6 +11,7 @@ import i18n from '../i18n';
 
 import './user-subscriptions.css';
 
+const cn = withNaming({ e: '__', m: '_', v: '_' });
 const classNames = cn('user-subscriptions');
 
 export default class UserSubscriptions extends React.Component {

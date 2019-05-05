@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { cn } from '@bem-react/classname';
+import { withNaming } from '@bem-react/classname';
 
 import { parseTicket } from '../../lib/helpers';
 
@@ -14,6 +14,7 @@ import ProductStatus from '../product-status';
 
 import i18n from '../i18n';
 
+const cn = withNaming({ e: '__', m: '_', v: '_' });
 const classNames = cn('product-form');
 
 class ProductDestroyForm extends React.Component {

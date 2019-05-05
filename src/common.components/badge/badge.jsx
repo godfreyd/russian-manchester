@@ -1,9 +1,10 @@
 import React from 'react';
 import propTypes from 'prop-types';
-import { cn } from '@bem-react/classname';
+import { withNaming } from '@bem-react/classname';
 
 import './badge.css';
 
+const cn = withNaming({ e: '__', m: '_', v: '_' });
 const classNames = cn('badge');
 
 const Badge = ({ type, text }) => (

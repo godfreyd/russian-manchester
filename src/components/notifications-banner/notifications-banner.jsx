@@ -1,5 +1,5 @@
 import React from 'react';
-import { cn } from '@bem-react/classname';
+import { withNaming } from '@bem-react/classname';
 
 import Banner from '../../common.components/banner';
 import Button from '../../common.components/button';
@@ -11,6 +11,7 @@ import '../../common.components/link/link.css';
 
 import './notifications-banner.css';
 
+const cn = withNaming({ e: '__', m: '_', v: '_' });
 const classNames = cn('notifications-banner');
 
 const NotificationsBanner = () => (

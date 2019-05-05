@@ -5,7 +5,7 @@
 
     width: 100%;
 
-    &-content
+    &__content
     {
         display: grid;
 
@@ -19,7 +19,7 @@
     /* 4 девайса */
     @media (min-width: 1500px) and (max-width: 1749px)
     {
-        &-content
+        &__content
         {
             grid-template-columns: 250px 970px 280px;
         }
@@ -28,7 +28,7 @@
     /* 5 девайсов */
     @media (min-width: 1750px)
     {
-        &-content
+        &__content
         {
             grid-template-columns: 250px 1200px 280px;
         }

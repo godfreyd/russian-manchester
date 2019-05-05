@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { cn } from '@bem-react/classname';
+import { withNaming } from '@bem-react/classname';
 import map from 'lodash/map';
 
 import ProductInfoRow from '../product-info-row';
@@ -9,6 +9,7 @@ import Suggest from '../../common.components/suggest';
 
 import i18n from '../i18n';
 
+const cn = withNaming({ e: '__', m: '_', v: '_' });
 const classNames = cn('immutable-product-info');
 
 const dateOpt = { year: 'numeric', month: 'long', day: 'numeric' };

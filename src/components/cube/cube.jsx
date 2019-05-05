@@ -1,5 +1,5 @@
 import React from 'react';
-import { cn } from '@bem-react/classname';
+import { withNaming } from '@bem-react/classname';
 import propTypes from 'prop-types';
 import find from 'lodash/find';
 import get from 'lodash/get';
@@ -12,6 +12,7 @@ import i18n from '../i18n';
 
 import './cube.css';
 
+const cn = withNaming({ e: '__', m: '_', v: '_' });
 const classNames = cn('cube');
 
 const Cube = ({ openCard, products, title, tesseracts }) => {

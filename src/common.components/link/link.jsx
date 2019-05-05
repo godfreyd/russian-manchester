@@ -1,10 +1,11 @@
 import React from 'react';
 import propTypes from 'prop-types';
-import { cn } from '@bem-react/classname';
+import { withNaming } from '@bem-react/classname';
 import { Link as InternalLink, NavLink } from 'react-router-dom';
 
 import './link.css';
 
+const cn = withNaming({ e: '__', m: '_', v: '_' });
 const classNames = cn('link');
 
 const Link = ({ url, navLink = false, internal = false, target = '_blank', children, type = 'default', onClick, ...props }) => {

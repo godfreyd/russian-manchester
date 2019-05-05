@@ -1,5 +1,5 @@
 import React from 'react';
-import { cn } from '@bem-react/classname';
+import { withNaming } from '@bem-react/classname';
 
 import Link from '../../common.components/link';
 import RulesModal from '../../common.components/rules-modal';
@@ -9,6 +9,7 @@ import i18n from '../i18n';
 
 import './footer.css';
 
+const cn = withNaming({ e: '__', m: '_', v: '_' });
 const classNames = cn('footer');
 
 export default class Footer extends React.Component {

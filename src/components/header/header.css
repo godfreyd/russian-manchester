@@ -7,7 +7,7 @@
 
     border-bottom: 1px solid #e1e6e8;
 
-    &-help-links
+    &__help-links
     {
         display: flex;
         justify-content: flex-end;
@@ -32,7 +32,7 @@
         }
     }
 
-    &-nav-menu
+    &__nav-menu
     {
         display: flex;
         justify-content: center;
@@ -48,7 +48,7 @@
         }
     }
 
-    &-search
+    &__search
     {
         display: flex;
         align-items: center;
@@ -56,7 +56,7 @@
         margin-right: 35px;
     }
 
-    &-user
+    &__user
     {
         display: flex;
         align-items: center;

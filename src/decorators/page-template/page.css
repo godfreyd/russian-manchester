@@ -5,7 +5,7 @@
 
     min-height: 100%;
 
-    &-content
+    &__content
     {
         display: flex;
 

@@ -1,10 +1,11 @@
 import React from 'react';
 import propTypes from 'prop-types';
-import { cn } from '@bem-react/classname';
+import { withNaming } from '@bem-react/classname';
 import Highlighter from 'react-highlight-words';
 
 import './highlight.css';
 
+const cn = withNaming({ e: '__', m: '_', v: '_' });
 const classNames = cn('highlight');
 
 const Highlight = ({ type = 'default', word, text }) => {

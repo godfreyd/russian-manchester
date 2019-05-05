@@ -1,12 +1,13 @@
 import React from 'react';
 import propTypes from 'prop-types';
-import { cn } from '@bem-react/classname';
+import { withNaming } from '@bem-react/classname';
 import get from 'lodash/get';
 
 import Checkbox from '../../../common.components/checkbox';
 
 import i18n from '../../i18n';
 
+const cn = withNaming({ e: '__', m: '_', v: '_' });
 const classNames = cn('filter');
 
 const PlatformFiltersGroup = ({ platformName, platformVersions, platformState, onChange }) => {

@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { cn } from '@bem-react/classname';
+import { withNaming } from '@bem-react/classname';
 
 import Icon from '../icon';
 
 import './banner.css';
 
+const cn = withNaming({ e: '__', m: '_', v: '_' });
 const classNames = cn('banner');
 
 class Banner extends React.Component {

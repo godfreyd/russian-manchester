@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { cn } from '@bem-react/classname';
+import { withNaming } from '@bem-react/classname';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 import Link from 'lego-on-react/src/components/link/link.react';
@@ -9,6 +9,7 @@ import i18n from '../../components/i18n';
 
 import './copy-text.css';
 
+const cn = withNaming({ e: '__', m: '_', v: '_' });
 const classNames = cn('copy-text');
 
 class CopyText extends React.Component {

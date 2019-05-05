@@ -1,6 +1,6 @@
 import React from 'react';
 import propTypes from 'prop-types';
-import { cn } from '@bem-react/classname';
+import { withNaming } from '@bem-react/classname';
 import get from 'lodash/get';
 
 import ConfirmationModal from '../../../common.components/modals/confirmation-modal';
@@ -19,6 +19,7 @@ import i18n from '../../i18n';
 
 import './cube-card.css';
 
+const cn = withNaming({ e: '__', m: '_', v: '_' });
 const classNames = cn('cube-card');
 
 export default class CubeCard extends React.Component {

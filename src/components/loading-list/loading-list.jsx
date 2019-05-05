@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { cn } from '@bem-react/classname';
+import { withNaming } from '@bem-react/classname';
 import isEqual from 'lodash/isEqual';
 import pick from 'lodash/pick';
 
@@ -12,6 +12,7 @@ import i18n from '../i18n';
 
 import './loading-list.css';
 
+const cn = withNaming({ e: '__', m: '_', v: '_' });
 const classNames = cn('loading-list');
 
 class LoadingList extends React.PureComponent {

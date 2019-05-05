@@ -1,6 +1,6 @@
 import React from 'react';
 import propTypes from 'prop-types';
-import { cn } from '@bem-react/classname';
+import { withNaming } from '@bem-react/classname';
 
 import DiagonalFilter from './__diagonal';
 import FilterStub from '../stubs/filter-stub';
@@ -9,6 +9,7 @@ import PlatformFilterContainer from './__platform';
 
 import './filter.css';
 
+const cn = withNaming({ e: '__', m: '_', v: '_' });
 const classNames = cn('filter');
 
 const Filter = ({ filters }) => {

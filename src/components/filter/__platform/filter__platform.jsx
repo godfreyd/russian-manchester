@@ -1,11 +1,12 @@
 import React from 'react';
 import propTypes from 'prop-types';
-import { cn } from '@bem-react/classname';
+import { withNaming } from '@bem-react/classname';
 
 import PlatformFiltersGroup from './filter__platform-filters-group';
 
 import i18n from '../../i18n';
 
+const cn = withNaming({ e: '__', m: '_', v: '_' });
 const classNames = cn('filter');
 
 const PlatformFilter = ({ names, status, platforms, onChange }) => {

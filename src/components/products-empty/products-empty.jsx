@@ -1,5 +1,5 @@
 import React from 'react';
-import { cn } from '@bem-react/classname';
+import { withNaming } from '@bem-react/classname';
 
 import './products-empty.css';
 
@@ -7,6 +7,7 @@ import Icon from '../../common.components/icon';
 
 import i18n from '../i18n';
 
+const cn = withNaming({ e: '__', m: '_', v: '_' });
 const classNames = cn('products-empty');
 
 const ProductsEmpty = () => (

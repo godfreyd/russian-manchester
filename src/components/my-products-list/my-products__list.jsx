@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { cn } from '@bem-react/classname';
+import { withNaming } from '@bem-react/classname';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 import Link from '../../common.components/link';
@@ -11,6 +11,7 @@ import i18n from '../i18n';
 
 import './my-products__list.css';
 
+const cn = withNaming({ e: '__', m: '_', v: '_' });
 const classNames = cn('my-products-list');
 
 const MyProductsList = ({ products }) => {

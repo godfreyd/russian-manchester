@@ -1,5 +1,5 @@
 import React from 'react';
-import { cn } from '@bem-react/classname';
+import { withNaming } from '@bem-react/classname';
 
 import Button from '../../../common.components/button';
 
@@ -9,6 +9,7 @@ import i18n from '../../i18n';
 
 import './product-stub.css';
 
+const cn = withNaming({ e: '__', m: '_', v: '_' });
 const classNames = cn('product-stub');
 
 const ProductStub = () => (

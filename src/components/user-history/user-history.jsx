@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { cn } from '@bem-react/classname';
+import { withNaming } from '@bem-react/classname';
 import get from 'lodash/get';
 
 import PageNumber from '../../decorators/page-number';
@@ -12,6 +12,7 @@ import DoorHistoryCard from './__door-card';
 
 import i18n from '../i18n';
 
+const cn = withNaming({ e: '__', m: '_', v: '_' });
 const classNames = cn('user-history');
 
 class UserHistory extends React.PureComponent {

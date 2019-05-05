@@ -1,6 +1,6 @@
 import React from 'react';
 import propTypes from 'prop-types';
-import { cn } from '@bem-react/classname';
+import { withNaming } from '@bem-react/classname';
 import get from 'lodash/get';
 
 import Button from '../../button';
@@ -9,6 +9,7 @@ import Modal from '../../modal';
 
 import './dialog-modal.css';
 
+const cn = withNaming({ e: '__', m: '_', v: '_' });
 const classNames = cn('dialog-modal');
 
 const defaultIcons = {

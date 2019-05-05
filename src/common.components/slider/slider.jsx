@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { cn } from '@bem-react/classname';
+import { withNaming } from '@bem-react/classname';
 
 import Icon from '../icon';
 
 import './slider.css';
 
+const cn = withNaming({ e: '__', m: '_', v: '_' });
 const classNames = cn('slider');
 
 const Slider = ({ title, children, itemsPerPage, totalCount = 0, type, pageNumber }) => {

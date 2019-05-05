@@ -1,8 +1,9 @@
 import React from 'react';
-import { cn } from '@bem-react/classname';
+import { withNaming } from '@bem-react/classname';
 
 import './rect.css';
 
+const cn = withNaming({ e: '__', m: '_', v: '_' });
 const classNames = cn('rect');
 
 const Rect = ({ type = 'default', width, height }) => (

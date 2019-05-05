@@ -1,5 +1,5 @@
 import React from 'react';
-import { cn } from '@bem-react/classname';
+import { withNaming } from '@bem-react/classname';
 import propTypes from 'prop-types';
 
 import Link from '../../common.components/link';
@@ -11,6 +11,7 @@ import i18n from '../i18n';
 
 import './header.css';
 
+const cn = withNaming({ e: '__', m: '_', v: '_' });
 const classNames = cn('header');
 
 const Header = ({ withSearch }) => {

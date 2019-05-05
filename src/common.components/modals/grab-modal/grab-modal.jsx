@@ -1,12 +1,13 @@
 import React from 'react';
 import propTypes from 'prop-types';
-import { cn } from '@bem-react/classname';
+import { withNaming } from '@bem-react/classname';
 
 import DialogModal from '../dialog-modal';
 import UserLogin from '../../user-login';
 
 import i18n from '../../../components/i18n';
 
+const cn = withNaming({ e: '__', m: '_', v: '_' });
 const classNames = cn('grab-modal');
 
 const GrabModal = ({ operator, productName, onAgree, onCancel }) => {

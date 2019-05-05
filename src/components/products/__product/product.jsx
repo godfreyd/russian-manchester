@@ -1,5 +1,5 @@
 import React from 'react';
-import { cn } from '@bem-react/classname';
+import { withNaming } from '@bem-react/classname';
 import propTypes from 'prop-types';
 import get from 'lodash/get';
 
@@ -21,6 +21,7 @@ import i18n from '../../i18n';
 
 import './product.css';
 
+const cn = withNaming({ e: '__', m: '_', v: '_' });
 const classNames = cn('product');
 
 export default class Product extends React.Component {

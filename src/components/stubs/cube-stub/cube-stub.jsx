@@ -1,11 +1,12 @@
 import React from 'react';
-import { cn } from '@bem-react/classname';
+import { withNaming } from '@bem-react/classname';
 
 import ProductStub from '../product-stub';
 import Rect from '../rect';
 
 import './cube-stub.css';
 
+const cn = withNaming({ e: '__', m: '_', v: '_' });
 const classNames = cn('cube-stub');
 
 const CubeStub = () => (
