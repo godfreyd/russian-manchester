@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Category",
+  "description": "Category data",
+  "type": "object",
+  "properties": {
+    "id": {
+      "description": "Unique identity of the category",
+      "type": "string",
+      "maxLength": 250
+    },
+    "name": {
+      "description": "Human readable name of category",
+      "type": "string",
+      "maxLength": 250
+    },
+    "description": {
+      "description": "Human readable description of category",
+      "type": "string"
+    },
+    "fqdn": {
+      "description": "Category FQDN",
+      "type": "string",
+      "maxLength": 250
+    },
+    "link": {
+      "description": "Link to tesseract location",
+      "type": "string",
+      "maxLength": 250
+    }
+  },
+  "additionalProperties": false
+}

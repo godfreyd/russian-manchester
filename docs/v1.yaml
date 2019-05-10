@@ -1,6 +1,6 @@
 openapi: 3.0.0
 servers:
-  - url: 'http://localhost:3001/v1/'
+- url: 'http://localhost:3001/api/v1/'
 info:
   title: Бекенд проекта "Гипермаркет"
   description: |
@@ -11,6 +11,132 @@ info:
     Обращается к базе данных в PGAAS
   version: '1.0'
 paths:
+  /product:
+    post:
+      summary: Сохранение товара
+      description: |
+        Добавляет новый товар в базу данных, или обновляет
+        товар, если в базе уже есть запись с таким
+        идентификатором. `id` передаётся в теле запроса и является
+        единственным обязательным полем.
+
+        Если в запросе перечислить не все поля товара, то
+        при создании выставляется значение по умолчанию `NULL`.
+        При обновлении товара сохраняются старые значения полей.
+
+        ## Доступ
+        Добавлять новые товары могут только администраторы магазина.
+        Изменять информацию о существующих товарах могут как администраторы, так и ответственные менеджеры. Если у пользователя нет доступа на редактирование,
+        вернется ошибка 403.
+      tags:
+      - product
+      responses:
+        '200':
+          description: Сохранённый товар
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/product'
+        '400':
+          description: Invalid arguments
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+              examples:
+                400_CSF:
+                  value:
+                    message: Product is invalid
+                    internalCode: 400_CSF
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+              examples:
+                401_MSC:
+                  value:
+                    message: Missing session cookie
+                    internalCode: 401_MSC
+                401_IUD:
+                  value:
+                    message: Invalid user data
+                    internalCode: 401_IUD
+                    body:
+                      status:
+                        id: 1
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+              examples:
+                403_CNE:
+                  value:
+                    message: User has no edit access to product
+                    internalCode: 403_NEA
+                    login: r2d2
+                    productId: 1111
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/product'
+        description: Товар
+        required: true
+  /filters:
+    get:
+      summary: Список фильтров товаров для главной страницы
+      description: |
+        Возвращает список фильтров для главной страницы. Фильтры используются
+        для ограничения размера выдачи списка устройств. В ответе содержатся
+
+        - Список категорий. Элемент списка состоит из идентификатора,
+          названия, описания, FQDN и ссылки на категорию.
+        - Список материалов
+        - Максимальное и минимальное значение цены товара
+      tags:
+      - product
+      responses:
+        '200':
+          description: OK
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   /textile:
     post:
       summary: Сохранение текстильного изделия

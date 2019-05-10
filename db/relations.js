@@ -8,4 +8,15 @@ module.exports = tables => {
 
     tables.textileGood.hasMany(tables.textile, { as: 'textiles', foreignKey: 'goodId' });
 
+
+
+
+
+    // tables.product.belongsTo(tables.productModel, { as: 'model', foreignKey: 'modelId' });
+
+
+    // tables.productModel.hasMany(tables.product, { as: 'products', foreignKey: 'modelId' });
+
+    tables.category.hasMany(tables.product, { as: 'products', foreignKey: 'categoryId' });
+
 };

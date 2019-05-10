@@ -1,0 +1,30 @@
+# Postgres
+#   gem install pg
+#
+#   Ensure the Postgres gem is defined in your Gemfile
+#   gem 'pg', '~> 0.18'
+#
+default: &default
+	adapter: postgresql
+	pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+	encoding: utf8
+	timeout: 5000
+
+development:
+	<<: *default
+	host: localhost
+	database: spreemarketplacedev
+	username: godfreyd
+	password: ss$0psrc*
+
+test:
+	<<: *default
+	database: test
+	username: spreemarketplacetest
+	password: ss$0psrc*
+
+production:
+	<<: *default
+	database: spreemarketplaceprod
+	username: godfreyd
+	password: ss$0psrc*

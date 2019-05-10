@@ -1,11 +1,11 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "Textile",
-  "description": "Description of the textile",
+  "title": "Product",
+  "description": "Description of the product",
   "type": "object",
   "properties": {
     "id": {
-      "description": "Unique identity of the textile",
+      "description": "Unique identity of the product",
       "type": "string",
       "maxLength": 250
     },
@@ -17,13 +17,13 @@
       "type": "string",
       "maxLength": 250
     },
-    "inventory": {
-      "description": "Private inventory number",
+    "material": {
+      "description": "Material",
       "type": "string",
       "maxLength": 250
     },
-    "material": {
-      "description": "Material",
+    "inventory": {
+      "description": "Private inventory number",
       "type": "string",
       "maxLength": 250
     },
@@ -34,24 +34,6 @@
     },
     "note": {
       "type": "string"
-    },
-    "cityOfShipment": {
-      "description": "The city of shipment",
-      "type": "string",
-      "maxLength": 250
-    },
-    "regionOfShipment": {
-      "description": "The region of shipment",
-      "type": "string",
-      "maxLength": 250
-    },
-    "latOfShipment": {
-      "type": "string",
-      "maxLength": 250
-    },
-    "lonOfShipment": {
-      "type": "string",
-      "maxLength": 250
     },
     "discount": {
       "description": "Discount",

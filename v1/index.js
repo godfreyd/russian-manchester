@@ -6,6 +6,8 @@ const router = express.Router();
 const asyncMiddleware = require('middlewares/asyncMiddleware');
 const transaction = require('middlewares/transaction');
 const textile = require('./textile');
+const product = require('./product');
+const filter = require('./filter');
 
 module.exports = router
     .get('/', asyncMiddleware(async (req, res, next) => {
@@ -14,5 +16,6 @@ module.exports = router
     .get('/ping/', asyncMiddleware(async (req, res, next) => {
         await res.status(200).send({message: 'OK'});
     }))
-    .post('/textile/save', transaction, textile.save);
-
+    .post('/textile/save', transaction, textile.save)
+    .get('/filters', filter.getFilters)
+    .post('/product/save', transaction, product.save);
