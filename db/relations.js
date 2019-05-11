@@ -12,10 +12,13 @@ module.exports = tables => {
 
 
 
-    // tables.product.belongsTo(tables.productModel, { as: 'model', foreignKey: 'modelId' });
+    tables.event.belongsTo(tables.product, { as: 'product', foreignKey: 'productId' });
 
+    tables.product.hasMany(tables.event, { as: 'events', foreignKey: 'productId' });
 
-    // tables.productModel.hasMany(tables.product, { as: 'products', foreignKey: 'modelId' });
+    tables.product.belongsTo(tables.productModel, { as: 'model', foreignKey: 'modelId' });
+
+    tables.productModel.hasMany(tables.product, { as: 'products', foreignKey: 'modelId' });
 
     tables.category.hasMany(tables.product, { as: 'products', foreignKey: 'categoryId' });
 
