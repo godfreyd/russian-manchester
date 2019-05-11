@@ -1,5 +1,7 @@
 const _ = require('lodash');
 const db = require('db');
+const Sequelize = require('sequelize');
+const Op = Sequelize.Op;
 
 class Product {
     constructor(data) {
@@ -33,7 +35,7 @@ class Product {
         };
         const productModel = await db.productModel.findAll({
             attributes: ['price'],
-            where: { price: { $ne: null } },
+            where: { price: { [Op.ne]: null } },
             limit: 1,
             include: product,
             order

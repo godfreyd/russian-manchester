@@ -8,8 +8,8 @@ module.exports = {
 
         const body = {
             categories: categories,
-            materials: await Product.getMaterials()
-            //prices: await Product.getPrices()
+            materials: await Product.getMaterials(),
+            prices: await Product.getPrices()
         };
 
         res.send(body);
