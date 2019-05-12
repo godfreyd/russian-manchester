@@ -12,17 +12,13 @@ module.exports = (sequelize, DataTypes) => {
                 field: 'model_id',
                 defaultValue: 'default-model'
             },
-            categoryId: {
-                type: DataTypes.STRING(250),
-                field: 'category_id'
-            },
             material: DataTypes.STRING(250),
+            price: DataTypes.STRING(250),
             inventory: DataTypes.STRING(250),
             brand: DataTypes.STRING(250),
             note: DataTypes.TEXT,
             discount: {
                 type: DataTypes.INTEGER,
-                field: 'discount',
                 defaultValue: 0,
                 allowNull: false
             },

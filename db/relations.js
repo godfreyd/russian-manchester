@@ -10,16 +10,14 @@ module.exports = tables => {
 
 
 
-
-
     tables.event.belongsTo(tables.product, { as: 'product', foreignKey: 'productId' });
 
     tables.product.hasMany(tables.event, { as: 'events', foreignKey: 'productId' });
 
-    tables.product.belongsTo(tables.productModel, { as: 'model', foreignKey: 'modelId' });
 
-    tables.productModel.hasMany(tables.product, { as: 'products', foreignKey: 'modelId' });
+    // Никто не может вставлять строки в таблицу product, которые не имеют соответствующей записи в таблице productModel. https://www.postgresql.org/docs/8.1/tutorial-fk.html
+    // tables.product.belongsTo(tables.productModel, { as: 'model', foreignKey: 'modelId' });
 
-    tables.category.hasMany(tables.product, { as: 'products', foreignKey: 'categoryId' });
+    // tables.productModel.hasMany(tables.product, { as: 'products', foreignKey: 'modelId' });
 
 };

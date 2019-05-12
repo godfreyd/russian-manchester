@@ -21,23 +21,6 @@ module.exports = {
             prepare: getMaterial
         }
     ],
-    price: [
-        {
-            features: 'Стоимость',
-            value: 'Цена',
-            prepare: data => parseInt(data, 10)
-        },
-        {
-            features: 'Стоимость',
-            value: 'Цена',
-            // @example: '500 ₽'
-            prepare: data => {
-                const [price] = _.split(data, ' ₽');
-
-                return parseInt(price, 10);
-            }
-        }
-    ],
     updatedAt: [
         {
             features: 'Дополнительная информация',

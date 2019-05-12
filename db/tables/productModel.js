@@ -12,7 +12,6 @@ module.exports = (sequelize, DataTypes) => {
                 allowNull: false
             },
             material: DataTypes.STRING(250),
-            price: DataTypes.INTEGER,
             updatedAt: {
                 type: DataTypes.DATEONLY,
                 field: 'updated_at'

@@ -21,6 +21,7 @@ app
     .disable('x-powered-by')
     .enable('trust proxy')
     .use(cors(corsOptions))
+    .use(bodyParser.json())
     .use(bodyParser.urlencoded({ extended: true }))
     .use(async (req, res, next) => {
         const uid = shortid.generate();

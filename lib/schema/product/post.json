@@ -13,12 +13,13 @@
       "type": "string",
       "maxLength": 250
     },
-    "categoryId": {
+    "material": {
+      "description": "Material",
       "type": "string",
       "maxLength": 250
     },
-    "material": {
-      "description": "Material",
+    "price": {
+      "description": "Price",
       "type": "string",
       "maxLength": 250
     },
@@ -37,7 +38,7 @@
     },
     "discount": {
       "description": "Discount",
-      "type": "number",
+      "type": "integer",
       "minimum": 0
     },
     "status": {

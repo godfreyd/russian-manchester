@@ -7,6 +7,8 @@ module.exports = {
 
         const productData = req.body;
 
+        console.log(productData);
+
         assert.bySchema(productData, 'product/post');
 
         // TODO: добавить проверку прав на редактирование и сохранение
