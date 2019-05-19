@@ -4,11 +4,6 @@
     "description": "Category data",
     "type": "object",
     "properties": {
-      "id": {
-        "description": "Unique identity of the category",
-        "type": "string",
-        "maxLength": 250
-      },
       "name": {
         "description": "Human readable name of category",
         "type": "string",
@@ -23,14 +18,27 @@
         "type": "string",
         "maxLength": 250
       },
-      "link": {
-        "description": "Link to tesseract location",
-        "type": "string",
-        "maxLength": 250
+      "subСategories": {
+        "description": "Subcategories",
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "description": "Name of the subcategory",
+              "type": "string",
+              "maxLength": 250,
+              "pattern": "^[A-Z]+\\d+$"
+            }
+          },
+          "required": [
+            "name"
+          ],
+          "additionalProperties": false
+        }
       }
     },
     "required": [
-      "id",
       "name",
       "fqdn"
     ],

@@ -14,22 +14,18 @@ module.exports = async () => {
         //     'staff',
         //     'event',
         //     'waitlist',
-        //     'tesseractSlot',
         //     'role',
         //     'heartbeat'
         // ]);
         await cleanTables([
-            // 'ticket',
             'textile',
-            // 'product'
+            'product',
+            'category'
             // 'location',
-            // 'slotType',
-            // 'tesseract'
         ]);
         await cleanTables([
             'textileGood',
             // 'productModel'
-            // 'tesseractGroup',
             // 'tesseractStatus',
             // 'office'
         ]);

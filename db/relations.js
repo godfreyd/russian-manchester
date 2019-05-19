@@ -9,7 +9,6 @@ module.exports = tables => {
     tables.textileGood.hasMany(tables.textile, { as: 'textiles', foreignKey: 'goodId' });
 
 
-
     tables.event.belongsTo(tables.product, { as: 'product', foreignKey: 'productId' });
 
     tables.product.hasMany(tables.event, { as: 'events', foreignKey: 'productId' });
@@ -19,5 +18,13 @@ module.exports = tables => {
     // tables.product.belongsTo(tables.productModel, { as: 'model', foreignKey: 'modelId' });
 
     // tables.productModel.hasMany(tables.product, { as: 'products', foreignKey: 'modelId' });
+
+
+
+    // tables.category.hasMany(tables.subCategory, { as: 'subCategories', foreignKey: 'categoryId' });
+
+    tables.category.hasMany(tables.event, { as: 'events', foreignKey: 'categoryId' });
+
+    // tables.subCategory.belongsTo(tables.category, { as: 'categories', foreignKey: 'categoryId' });
 
 };

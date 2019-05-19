@@ -8,6 +8,7 @@ const transaction = require('middlewares/transaction');
 const textile = require('./textile');
 const product = require('./product');
 const filter = require('./filter');
+const category = require('./category');
 
 module.exports = router
     .get('/', asyncMiddleware(async (req, res, next) => {
@@ -18,4 +19,5 @@ module.exports = router
     }))
     .post('/textile/save', transaction, textile.save)
     .get('/filters', filter.getFilters)
-    .post('/product/save', transaction, product.save);
+    .post('/product', transaction, product.save)
+    .post('/category', transaction, category.save);

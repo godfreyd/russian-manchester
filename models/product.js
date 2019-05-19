@@ -27,17 +27,25 @@ class Product {
     }
 
     static async _getPrice(order) {
-        const product = {
-            model: db.product,
-            as: 'products',
-            attributes: [],
-            required: true
-        };
-        const productModel = await db.productModel.findAll({
+        // const product = {
+        //     model: db.product,
+        //     as: 'products',
+        //     attributes: [],
+        //     required: true
+        // };
+        // const productModel = await db.productModel.findAll({
+        //     attributes: ['price'],
+        //     where: { price: { [Op.ne]: null } },
+        //     limit: 1,
+        //     include: product,
+        //     order
+        // });
+
+
+        const productModel = await db.product.findAll({
             attributes: ['price'],
             where: { price: { [Op.ne]: null } },
             limit: 1,
-            include: product,
             order
         });
 

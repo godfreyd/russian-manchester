@@ -9,18 +9,6 @@ const getDate = data => {
 };
 
 module.exports = {
-    material: [
-        {
-            features: 'Общие характеристики',
-            value: 'Материал',
-            prepare: getMaterial
-        },
-        {
-            features: 'Материал',
-            value: 'Материал',
-            prepare: getMaterial
-        }
-    ],
     updatedAt: [
         {
             features: 'Дополнительная информация',

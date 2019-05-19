@@ -102,8 +102,105 @@ paths:
       responses:
         '200':
           description: OK
+  /category:
+  post:
+    summary: Создание категории
+    description: |
+      Добавляет новую категорию в базу данных.
 
+      Поля `name` и `fqdn` обязательные
+      к заполнению. Остальные поля можно не указывать.
+      В таком случае, при создании в базу сохранятся значения `NULL`.
 
+      Если указать поле `subCategories`, то для категории будут созданы подкатегории. В настоящий момент поддерживается двойная вложенность.
+
+      `id` категории будет сгенерирован автоматически и будет представлять из себя слаг поля `name`.
+
+      Поле `fqdn` должно быть уникальным.
+
+      ## Доступ
+      Добавлять новые категории товаров могут только администраторы сервиса. Роли выдаются в IDM.
+      Если пользователь не является администратором, то вернётся ошибка с кодом 403.
+    tags:
+    - category
+    responses:
+      '201':
+        description: Категория успешно создана
+      '400':
+        description: Invalid arguments
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/error'
+            examples:
+              400_CSF:
+                value:
+                  message: Check by schema failed
+                  internalCode: 400_CSF
+              400_III:
+                value:
+                  message: Category identity is invalid
+                  internalCode: 400_III
+                  id: inv@l!d
+              400_NII:
+                value:
+                  message: Category name is invalid
+                  internalCode: 400_NII
+                  id: inv@l!d
+              400_TIE:
+                value:
+                  message: Category with same id already exists
+                  internalCode: 400_TIE
+                  id: arni-cube
+              400_TFE:
+                value:
+                  message: Category with same FQDN already exists
+                  internalCode: 400_TFE
+                  fqdn: arni-cube-fqdn
+      '401':
+        description: Unauthorized
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/error'
+            examples:
+              401_MSC:
+                value:
+                  message: Missing session cookie
+                  internalCode: 401_MSC
+              401_IUD:
+                value:
+                  message: Invalid user data
+                  internalCode: 401_IUD
+                  body:
+                    status:
+                      id: 1
+      '403':
+        description: Forbidden
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/error'
+            examples:
+              403_NCA:
+                value:
+                  message: User has no access to create category
+                  internalCode: 403_NCA
+                  login: r2d2
+      '404':
+        description: Not found
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/error'
+            examples:
+              404_SNE:
+                value:
+                  message: Status does not exist
+                  internalCode: 404_SNE
+                  statusId: online
+    requestBody:
+      $ref: '#/components/requestBodies/categoryPost'
 
 
 

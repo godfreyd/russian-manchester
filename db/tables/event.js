@@ -17,20 +17,19 @@ module.exports = (sequelize, DataTypes) => {
                 type: DataTypes.FLOAT,
                 field: 'occurrence_ts'
             },
-            tesseractId: {
+            sessionId: {
                 type: DataTypes.STRING(250),
-                field: 'tesseract_id'
+                field: 'session_id'
             },
-            operator: DataTypes.STRING(250),
-            locationId: {
+            categoryId: {
                 type: DataTypes.STRING(250),
-                field: 'location_id'
+                field: 'category_id'
             },
-            textileId: {
+            productId: {
                 type: DataTypes.STRING(250),
-                field: 'textile_id'
+                field: 'product_id'
             },
-            slot: DataTypes.STRING(250),
+            subCategory: DataTypes.STRING(250),
             isLast: {
                 type: DataTypes.BOOLEAN,
                 field: 'is_last',
@@ -56,8 +55,8 @@ module.exports = (sequelize, DataTypes) => {
             tableName: 'events',
             indexes: [
                 {
-                    name: 'idx_events_textile_id_is_last_unique',
-                    fields: ['textile_id', 'is_last'],
+                    name: 'idx_events_product_id_is_last_unique',
+                    fields: ['product_id', 'is_last'],
                     unique: true,
                     where: {
                         'is_last': true

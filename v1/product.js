@@ -7,11 +7,9 @@ module.exports = {
 
         const productData = req.body;
 
-        console.log(productData);
-
         assert.bySchema(productData, 'product/post');
 
-        // TODO: добавить проверку прав на редактирование и сохранение
+        // TODO: добавить проверку, когда будет аутентификация
         // await checkEditAccess(res.locals.user.login, productData.id);
 
         const product = new Product(productData);

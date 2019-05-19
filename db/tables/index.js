@@ -6,4 +6,5 @@ module.exports = sequelize => ({
     product: sequelize.import('product'),
     productModel: sequelize.import('productModel'),
     category: sequelize.import('category'),
+    subСategory: sequelize.import('subСategory')
 });

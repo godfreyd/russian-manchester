@@ -13,7 +13,11 @@ module.exports = (sequelize, DataTypes) => {
                 defaultValue: 'default-model'
             },
             material: DataTypes.STRING(250),
-            price: DataTypes.STRING(250),
+            price: {
+                type: DataTypes.INTEGER,
+                defaultValue: 0,
+                allowNull: false
+            },
             inventory: DataTypes.STRING(250),
             brand: DataTypes.STRING(250),
             note: DataTypes.TEXT,

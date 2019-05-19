@@ -9,10 +9,6 @@ module.exports = (sequelize, DataTypes) => {
             role: {
                 type: DataTypes.ENUM('user', 'admin', 'manager'),
                 allowNull: false
-            },
-            groupId: {
-                type: DataTypes.STRING(250),
-                field: 'group_id'
             }
         },
         {
@@ -24,10 +20,7 @@ module.exports = (sequelize, DataTypes) => {
                 {
                     name: 'roles_login_role_key',
                     fields: ['login', 'role'],
-                    unique: true,
-                    where: {
-                        'group_id': null
-                    }
+                    unique: true
                 }
             ]
         }

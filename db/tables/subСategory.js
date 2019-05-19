@@ -1,25 +1,29 @@
 module.exports = (sequelize, DataTypes) => {
     return sequelize.define(
-        'category',
+        'sub_category',
         {
             id: {
                 type: DataTypes.STRING(250),
                 allowNull: false,
                 primaryKey: true
             },
-            name: DataTypes.STRING(250),
-            description: DataTypes.TEXT,
-            fqdn: {
+            categoryId: {
                 type: DataTypes.STRING(250),
                 allowNull: false,
-                unique: true
+                unique: 'sub_category',
+                field: 'category_id'
+            },
+            name: {
+                type: DataTypes.STRING(250),
+                allowNull: false,
+                unique: 'sub_category'
             }
         },
         {
             timestamps: false,
             underscored: true,
             freezeTableName: true,
-            tableName: 'categories'
+            tableName: 'sub_categories'
         }
     );
 };
